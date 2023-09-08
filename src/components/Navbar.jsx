@@ -13,7 +13,7 @@ const navLinks = [
 function Navbar() {
     const [isToggled,toogle] =  useToggle(false)
   return (
-    <nav className="bg-gradient-to-r from-pink-400 via-purple-500 to-blue-600 shadow-lg py-4 px-4">
+    <nav className="sticky top-0 z-50 shadow-lg py-4 px-4">
       <div className="flex flex-col space-y-6 md:space-y-0 md:pl-0 md:flex-row md:items-center justify-between md:max-w-6xl mx-auto">
         <div className='flex items-center justify-between'>
         <Link to="/" className="text-white text-2xl font-bold">
