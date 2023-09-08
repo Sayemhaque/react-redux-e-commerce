@@ -1,11 +1,13 @@
 import HeroSection from "../../components/Hero";
 import Navbar from "../../components/Navbar";
+import ProductCategories from "../../components/ProductCategories";
 
 const Home = () => {
     return (
-        <div>
+        <div className="bg">
           <Navbar/>
           <HeroSection/>
+          <ProductCategories/>
         </div>
     );
 };
