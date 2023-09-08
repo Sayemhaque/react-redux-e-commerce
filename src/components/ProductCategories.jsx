@@ -47,7 +47,7 @@ const ProductCategories = () => {
                 <li
                 className="bg-purple-500 bg-opacity-80 p-4 rounded-md shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:scale-105"
               >
-                <a href="#" className="font-medium">
+                <a href="#" className="font-medium text-3xl">
                     <p className="text-5xl py-4">    {category.icon}</p>
                   {category.name}
                 </a>

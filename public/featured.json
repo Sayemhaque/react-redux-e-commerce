@@ -1,0 +1,35 @@
+[
+    {
+      "id": 1,
+      "name": "Smartphone X",
+      "image": "https://img.freepik.com/free-psd/premium-mobile-phone-screen-mockup-template_53876-81688.jpg",
+      "price": 499.99,
+      "rating": 4.5,
+      "category": "Electronics"
+    },
+    {
+      "id": 2,
+      "name": "Men's Hoodie",
+      "image": "https://st4.depositphotos.com/27230386/40204/v/450/depositphotos_402044322-stock-illustration-oversized-cotton-fleece-hoodie-technical.jpg",
+      "price": 39.99,
+      "rating": 4.0,
+      "category": "Clothing"
+    },
+    {
+      "id": 3,
+      "name": "Home Security Camera",
+      "image": "https://www.sourcesecurity.com/img/products/400/illustra-ipl02b2bnwiy-cctv-camera.jpg",
+      "price": 89.99,
+      "rating": 4.7,
+      "category": "Electronics"
+    },
+    {
+      "id": 4,
+      "name": "Gaming Console",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOwF0gv9ftVIygb4egh2AjG1Curo9Lmzrisg&usqp=CAU",
+      "price": 299.99,
+      "rating": 4.8,
+      "category": "Electronics"
+    }
+  ]
+  

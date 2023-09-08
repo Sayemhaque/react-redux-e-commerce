@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
 
-const Button = ({title,style}) => {
+const Button = ({title,style,icon}) => {
     return <button
-    className={`${style} bg-purple-600 text-white hover:bg-purple-700 rounded-full py-2 px-6 text-lg font-semibold transition duration-300 ease-in-out inline-block`}
+    className={`${style} bg-purple-600  text-white hover:bg-purple-700 rounded-full py-2 px-6 text-lg font-semibold transition duration-300 ease-in-out flex items-center gap-3`}
   >
-    {title}
+   {icon} {title}
   </button>
 };
 
