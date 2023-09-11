@@ -1,0 +1,35 @@
+[
+    {
+      "id": 1,
+      "productId": 1,
+      "author": "John Doe",
+      "rating": 5,
+      "date": "2023-08-15",
+      "comment": "This product is amazing! It exceeded my expectations."
+    },
+    {
+      "id": 2,
+      "productId": 1,
+      "author": "Jane Smith",
+      "rating": 4,
+      "date": "2023-08-17",
+      "comment": "Good product, but it could be a bit cheaper."
+    },
+    {
+      "id": 3,
+      "productId": 2,
+      "author": "Alice Johnson",
+      "rating": 5,
+      "date": "2023-08-20",
+      "comment": "I love this hoodie. It's so comfortable!"
+    },
+    {
+      "id": 4,
+      "productId": 2,
+      "author": "Bob Williams",
+      "rating": 3,
+      "date": "2023-08-22",
+      "comment": "The hoodie quality is decent, but the sizing is a bit off."
+    }
+  ]
+  

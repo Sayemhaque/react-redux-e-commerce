@@ -1,10 +1,16 @@
 import { FaShoppingCart } from "react-icons/fa";
 import Button from "./Button";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../redux/feature/cartSlice";
 
 /* eslint-disable react/prop-types */
 function FeatureProductCard({ product }) {
+    const dispatch = useDispatch()
+    const handleAddToCart = (product) => {
+        dispatch(addToCart(product))
+    }
     return (
-        <div className="curson-pointer bg-purple-600 bg-opacity-70 w-full hover:scale-105 duration-500 text-white shadow-md rounded-lg overflow-hidden">
+        <div className="cursor-pointer bg-purple-600 bg-opacity-70 w-full hover:scale-105 duration-500 text-white shadow-md rounded-lg overflow-hidden">
             <img src={product.image} alt={product.name} className="w-full h-64 object-cover" />
 
             <div className="px-4 py-8 space-y-4">
@@ -14,6 +20,7 @@ function FeatureProductCard({ product }) {
                <Button
                 title={`Add to cart`}
                 icon={<FaShoppingCart/>}
+                onClick={() =>handleAddToCart(product)}
                 />
                 <p className="text-lg text-right font-semibold">${product.price}</p>
                </div>

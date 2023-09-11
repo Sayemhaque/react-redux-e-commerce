@@ -1,15 +1,15 @@
 import FeaturedProduct from "../../components/FeaturedProduct";
 import HeroSection from "../../components/Hero";
-import Navbar from "../../components/Navbar";
 import ProductCategories from "../../components/ProductCategories";
+// import Review from "../../components/Review";
 
 const Home = () => {
     return (
         <div className="bg">
-          <Navbar/>
           <HeroSection/>
           <ProductCategories/>
           <FeaturedProduct/>
+          {/* <Review/> */}
         </div>
     );
 };
