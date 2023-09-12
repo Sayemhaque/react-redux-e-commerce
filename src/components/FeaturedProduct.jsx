@@ -1,18 +1,9 @@
-import { useEffect, useState } from "react";
 import FeatureProductCard from "./FeatureProductCard";
 import SectionTitle from "./SectionTitle";
+import { useGetFeatureProductsQuery } from "../redux/feature/api/baseApi";
 
 const FeaturedProduct = () => {
-    const [product, setProduct] = useState([])
-    useEffect(() => {
-        try {
-            fetch("featured.json")
-                .then(res => res.json())
-                .then(data => setProduct(data))
-        } catch (error) {
-            console.log(error)
-        }
-    }, [])
+    const {data:product} = useGetFeatureProductsQuery()
     console.log(product)
     return (
         <section>
