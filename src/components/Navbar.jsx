@@ -15,6 +15,13 @@ const navLinks = [
 function Navbar() {
     const [isToggled, toogle] = useToggle(false)
     const {cart} = useSelector((state) => state.cartSlice)
+    let totalQuantity = 0;
+
+    // Loop through the cart and sum up the quantities
+    for (const item of cart) {
+      totalQuantity += item.quantity;
+    }
+    
     return (
         <nav className="bg-purple-500 bg-opacity-80 sticky top-0 z-50 shadow-lg py-4 px-4">
             <div className="flex flex-col space-y-6 md:space-y-0 md:pl-0 md:flex-row md:items-center justify-between md:max-w-6xl mx-auto">
@@ -30,7 +37,7 @@ function Navbar() {
                   <Link to='cart'>
                   <div className='relative '>
                         <p className='text-white text-2xl'><FaShoppingBag /></p>
-                        <p className='absolute -top-3 -right-3 bg-red-400 text-white w-5 h-5 flex justify-center items-center rounded-full'>{cart.length}</p>
+                        <p className='absolute -top-3 -right-3 bg-red-400 text-white w-5 h-5 flex justify-center items-center rounded-full'>{totalQuantity}</p>
                     </div>
                     </Link>
                 <ul className={`${!isToggled ? "hidden md:flex flex-col md:flex-row gap-3 items-center" : "flex flex-col md:flex-row gap-3 "}`}>

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
+import FilterProduct from "../../components/FilterProduct";
 
 const Products = () => {
     const [products,setProducts] = useState([])
@@ -11,6 +12,7 @@ const Products = () => {
     console.log(products)
     return (
         <section className="bg">
+            <FilterProduct/>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 py-12 md:max-w-6xl mx-auto">
             {
                 products.map(product => <ProductCard key={product.id} product={product}/>)

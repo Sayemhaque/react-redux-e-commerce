@@ -11,7 +11,8 @@ const cartSlice = createSlice({
       const data = action.payload;
       const alreadyInCart = state.cart.find((product) => product.id === data.id);
       if (alreadyInCart) {
-        return;
+        alreadyInCart.quantity +=  1
+        console.log(alreadyInCart)
       } else {
         state.cart.push({ ...data, quantity: 1 });
         const totalPrice = state.cart.reduce(

@@ -9,6 +9,13 @@ function CartPage() {
   const handleRemoveFromCart = (id) => {
     dispatch(removeProductFromCart(id))
   }
+  let totalQuantity = 0;
+
+// Loop through the cart and sum up the quantities
+for (const item of cart) {
+  totalQuantity += item.quantity;
+}
+
   return (
     <>
       {cart.length < 1 ? <p className='text-3xl font-bold text-center mt-12'>Cart is empty</p> :
@@ -56,7 +63,7 @@ function CartPage() {
             <div className="bg-purple-600 bg-opacity-80 p-4 rounded-lg">
               <h2 className="text-xl font-semibold mb-4">Cart Summary</h2>
               <div className="mb-2">
-                Total Products: <span className="font-semibold">{cart.length}</span>
+                Total Products: <span className="font-semibold">{totalQuantity}</span>
               </div>
               <div>
                 Total Price: <span className="font-semibold">${totalPrice}</span>
