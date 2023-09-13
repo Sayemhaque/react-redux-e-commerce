@@ -6,7 +6,7 @@ export const baseApi = createApi({
   endpoints: (builder) => ({
     getFeatureProducts: builder.query({
         query: () => ""
-    })
+    }),
   })
 })
 

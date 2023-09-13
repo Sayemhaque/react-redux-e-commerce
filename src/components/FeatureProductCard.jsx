@@ -11,7 +11,7 @@ function FeatureProductCard({ product }) {
     }
     return (
         <div className="cursor-pointer bg-purple-600 bg-opacity-70 w-full hover:scale-105 duration-500 text-white shadow-md rounded-lg overflow-hidden">
-            <img src={product.image} alt={product.name} className="w-full h-64 object-cover" />
+            <img src={product.image} loading="lazy" alt={product.name} className="w-full h-64 object-cover" />
 
             <div className="px-4 py-8 space-y-4">
                 <h2 className="text-2xl font-semibold ">{product.name}</h2>

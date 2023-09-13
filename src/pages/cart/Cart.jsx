@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import Button from "../../components/Button"
 import { FaTrash } from "react-icons/fa"
-import { clearCart, increaseQuantity, removeProductFromCart } from '../../redux/feature/cartSlice';
+import { clearCart, decreaseQuantity, increaseQuantity, removeProductFromCart } from '../../redux/feature/cartSlice';
 function CartPage() {
   const dispatch = useDispatch()
   const { cart, totalPrice } = useSelector((state) => state.cartSlice)
@@ -36,7 +36,7 @@ function CartPage() {
                       <div className="flex justify-center items-center gap-5">
                         <p className='text-2xl cursor-pointer' onClick={() => dispatch(increaseQuantity(item.id))}>+</p>
                         {item.quantity}
-                        <p className='text-2xl cursor-pointer'>-</p>
+                        <p className='text-2xl cursor-pointer'  onClick={() => dispatch(decreaseQuantity(item.id))}>-</p>
                       </div>
                     </td>
                     <td className="border px-4 py-2">${item.quantity * item.price}</td>
