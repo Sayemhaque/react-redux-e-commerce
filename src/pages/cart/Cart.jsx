@@ -41,19 +41,24 @@ for (const item of cart) {
                     <td className="border px-4 py-2">{item.title}</td>
                     <td className="border px-4 py-2">
                       <div className="flex justify-center items-center gap-5">
-                        <p className='text-2xl cursor-pointer' onClick={() => dispatch(increaseQuantity(item.id))}>+</p>
+                        <p className='text-2xl cursor-pointer'
+                         onClick={() => dispatch(increaseQuantity(item.id))}>+</p>
                         {item.quantity}
-                        <p className='text-2xl cursor-pointer'  onClick={() => dispatch(decreaseQuantity(item.id))}>-</p>
+                        <p className='text-2xl cursor-pointer'
+                          onClick={() => dispatch(decreaseQuantity(item.id))}>-</p>
                       </div>
                     </td>
-                    <td className="border px-4 py-2">${item.quantity * item.price}</td>
+                    <td className="border px-4 py-2">
+                      ${(item.quantity * item.price).toFixed(2)}
+                      </td>
                     <td className="border px-4 py-2 cursor-pointer" onClick={() => handleRemoveFromCart(item.id)}><FaTrash /></td>
                   </tr>
                 ))}
               </tbody>
             </table>
             <Button
-              onClick={() => dispatch(clearCart())}
+              onClick={() =>
+              dispatch(clearCart())}
               title={"Clear cart"}
               style={"mt-5"}
             />
