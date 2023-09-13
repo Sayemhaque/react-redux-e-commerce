@@ -67,9 +67,11 @@ const cartSlice = createSlice({
       const productToUpdate = state.cart.find(
         (product) => product.id === productId
       );
-
       if (productToUpdate) {
-        productToUpdate.quantity -= 1;
+       // Decrease the quantity
+      if (productToUpdate.quantity > 0) {
+      productToUpdate.quantity -= 1;
+      }
         // updating the total price of all the products in cart
         state.totalPrice = state.cart
           .reduce(
@@ -79,6 +81,10 @@ const cartSlice = createSlice({
           )
           .toFixed(2);
       }
+      // Remove the product from the cart if its quantity becomes zero
+    if (productToUpdate.quantity === 0) {
+      state.cart = state.cart.filter((product) => product.id !== productId);
+    }
     },
     // clearing the whole cart
     clearCart: (state) => {
