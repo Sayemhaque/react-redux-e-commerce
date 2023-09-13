@@ -18,6 +18,7 @@ function FeatureProductCard({ product }) {
                 <p className=""><span className="font-bold">Rating: </span>{product.rating}</p>
                <div className="flex items-center justify-between">
                <Button
+                style={"bg-black flex items-center"}
                 title={`Add to cart`}
                 icon={<FaShoppingCart/>}
                 onClick={() =>handleAddToCart(product)}

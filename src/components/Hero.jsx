@@ -11,6 +11,7 @@ function Hero() {
         Shop with confidence knowing that your purchases <br /> are backed by our hassle-free return policy.
           </p>
           <Button
+          style={"bg-purple-600"}
           title={"Shop now"}
           />
         </div>

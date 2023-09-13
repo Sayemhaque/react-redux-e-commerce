@@ -15,10 +15,11 @@ const ProductCard = ({product}) => {
            <div className="flex items-center justify-between">
            <Button
             title={`Add to cart`}
+            style={"bg-black flex items-center"}
             icon={<FaShoppingCart/>}
             onClick={() => dispatch(addToCart(product))}
             />
-            <p className="text-lg text-right font-semibold">${product.price}</p>
+            <p className="text-lg text-right  font-semibold">${product.price}</p>
            </div>
         </div>
     </div>
