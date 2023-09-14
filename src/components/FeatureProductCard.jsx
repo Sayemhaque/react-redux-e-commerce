@@ -26,9 +26,9 @@ function FeatureProductCard({ product }) {
         <p className="md:hidden mt-3 w-3/12 bg-purple-900 text-sm font-semibold  px-3">${product.price}</p>
         <div className="flex flex-col sm:flex-row sm:items-center justify-between mt-5">
           <div className="text-xl flex items-center gap-2 justify-between">
-            <FaShoppingCart onClick={() => dispatch(addToCart(product))} />
-            <FaRegHeart />
-            <FaEye />
+          <FaShoppingCart className="bg-purple-400  bg-opacity-60 w-10 h-10 p-2  rounded-full"  onClick={() => dispatch(addToCart(product))}/>
+           <FaRegHeart className="bg-purple-400  bg-opacity-60 w-10 h-10 p-2  rounded-full"/>
+           <FaEye className="bg-purple-400  bg-opacity-60 w-10 h-10 p-2 rounded-full"/>
           </div>
           <p className="hidden  bg-purple-900 text-sm font-semibold md:inline-block px-3">${product.price}</p>
 

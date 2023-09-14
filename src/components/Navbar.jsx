@@ -23,23 +23,32 @@ function Navbar() {
     }
     
     return (
-        <nav className="bg-purple-500 bg-opacity-80 sticky top-0 z-50 shadow-lg py-4 px-4">
+        <nav className="bg-purple-800 bg-opacity-80 sticky top-0 z-50 shadow-lg py-4 px-4">
             <div className="flex flex-col space-y-6 md:space-y-0 md:pl-0 md:flex-row md:items-center justify-between md:max-w-6xl mx-auto">
-                <div className='flex items-center justify-between'>
+                <div className='flex items-center   justify-between'>
+                     {/* bar icons */}
+                     <div className='bg-purple-400 p-1 bg-opacity-60 rounded-md'>
+                     <FaBars className='md:hidden cursor-pointer text-white' onClick={toogle} />
+                     </div>
                     <Link to="/" className="text-white text-2xl font-bold">
                         {/* Your text logo */}
                         ShopZenith
                     </Link>
-                    {/* icons */}
-                    <FaBars className='md:hidden cursor-pointer text-white' onClick={toogle} />
-                </div>
-                   {/* cart */}
+                     {/* cart  for mobile*/}
                   <Link to='cart'>
-                  <div className='relative '>
-                        <p className='text-white text-2xl'><FaShoppingBag /></p>
+                  <div className='flex md:hidden relative '>
+                        <p className='text-white text-2xl bg-purple-400 p-2 rounded-full bg-opacity-60'><FaShoppingBag /></p>
                         <p className='absolute -top-3 -right-3 bg-red-400 text-white w-5 h-5 flex justify-center items-center rounded-full'>{totalQuantity}</p>
                     </div>
                     </Link>
+                </div>
+                {/* cart for desktop */}
+                <Link to='cart'>
+                  <div className='hidden md:block relative '>
+                        <p className='text-white text-2xl bg-purple-400 p-2 rounded-full bg-opacity-60'><FaShoppingBag /></p>
+                        <p className='absolute -top-3 -right-3 bg-red-400 text-white w-5 h-5 flex justify-center items-center rounded-full'>{totalQuantity}</p>
+                    </div>
+                    </Link> 
                 <ul className={`${!isToggled ? "hidden md:flex flex-col md:flex-row gap-3 items-center" : "flex flex-col md:flex-row gap-3 "}`}>
                     {navLinks.map((link, index) => (
                         <li key={index}>
