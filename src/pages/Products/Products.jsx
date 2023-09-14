@@ -1,24 +1,25 @@
-import { useEffect, useState } from "react";
+/* eslint-disable no-import-assign */
 import ProductCard from "./ProductCard";
 import FilterProduct from "../../components/FilterProduct";
+import { useGetProductsQuery } from "../../redux/feature/api/baseApi";
+import { useState } from "react";
 
 const Products = () => {
-    const [products,setProducts] = useState([])
     const [category,setCategory] = useState("All")
-    useEffect(() => {
-        fetch("https://fakestoreapi.com/products")
-        .then(res => res.json())
-        .then(data => setProducts(data))
-    },[])
+    const {data:products,isLoading} = useGetProductsQuery()
     // filtering the products
     let filteredProduct;
     filteredProduct = category === "All" ? products :
    products.filter(product => product.category === category) ;
 
+   if(isLoading){
+    return <p className="text-center text-2xl font-bold font-serif">Loading.....</p>
+}
     return (
         <section className="grid grid-cols-1 md:grid-cols-5 bg">
             <FilterProduct setCategory={setCategory}/>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-8 py-12 md:col-span-4 px-5">
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 
+             md:gap-8 py-12 md:col-span-4 px-3 space-y-4">
             {
                 filteredProduct.
                 map(product => <ProductCard key={product.id} product={product}/>)
