@@ -36,7 +36,7 @@ const ProductCategories = () => {
       ]
       
     return (
-        <div className="bg text-white py-6">
+        <div className="bg-slate-900 text-white py-6">
         <div className="container mx-auto">
          <SectionTitle 
           title={"Product Categories"}

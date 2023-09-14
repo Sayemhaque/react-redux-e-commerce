@@ -16,10 +16,10 @@ const Products = () => {
     return <p className="text-center text-2xl font-bold font-serif">Loading.....</p>
 }
     return (
-        <section className="grid grid-cols-1 md:grid-cols-5 bg">
+        <section className="grid grid-cols-1 md:grid-cols-5 bg-slate-900">
             <FilterProduct setCategory={setCategory}/>
             <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 
-             md:gap-8 py-12 md:col-span-4 px-3 space-y-4">
+             md:gap-8 py-12 md:col-span-4 px-3">
             {
                 filteredProduct.
                 map(product => <ProductCard key={product.id} product={product}/>)

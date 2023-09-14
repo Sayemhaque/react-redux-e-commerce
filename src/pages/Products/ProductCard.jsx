@@ -7,8 +7,7 @@ const ProductCard = ({product}) => {
     const dispatch = useDispatch()
     return (
         <div className="cursor-pointer bg-purple-600 bg-opacity-70 w-full hover:scale-105 duration-500 text-white shadow-md rounded-lg overflow-hidden">
-        <img src={product.image} alt={product.title} className="w-full h-64 object-cover" />
-
+        <img src={product.image} alt={product.title} className="w-full h-40 md:h-64 object-cover" />
         <div className="px-4 py-7">
             <h2 className="text-md md:text-2xl font-semibold hidden ">
                 {product.title.substring(0,25)}...</h2>
