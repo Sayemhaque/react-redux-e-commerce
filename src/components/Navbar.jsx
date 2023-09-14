@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import useToggle from '../hooks/useToggle';
-import { FaBars, FaShoppingBag } from "react-icons/fa"
+import { FaBars, FaRegHeart, FaShoppingBag } from "react-icons/fa"
 import { useSelector } from 'react-redux';
 
 const navLinks = [
@@ -15,8 +15,8 @@ const navLinks = [
 function Navbar() {
     const [isToggled, toogle] = useToggle(false)
     const {cart} = useSelector((state) => state.cartSlice)
+    const {favouriteProduct} = useSelector((state) => state.favProductSlice)
     let totalQuantity = 0;
-
     // Loop through the cart and sum up the quantities
     for (const item of cart) {
       totalQuantity += item.quantity;
@@ -35,12 +35,20 @@ function Navbar() {
                         ShopZenith
                     </Link>
                      {/* cart  for mobile*/}
+                  <div className='flex items-center gap-2'>
                   <Link to='cart'>
                   <div className='flex md:hidden relative '>
                         <p className='text-white text-2xl bg-purple-400 p-2 rounded-full bg-opacity-60'><FaShoppingBag /></p>
                         <p className='absolute -top-3 -right-3 bg-red-400 text-white w-5 h-5 flex justify-center items-center rounded-full'>{totalQuantity}</p>
                     </div>
                     </Link>
+                    <Link to='favourite'>
+                  <div className='flex md:hidden relative '>
+                        <p className='text-white text-2xl bg-purple-400 p-2 rounded-full bg-opacity-60'><FaRegHeart /></p>
+                        <p className='absolute -top-3 -right-3 bg-red-400 text-white w-5 h-5 flex justify-center items-center rounded-full'>{favouriteProduct.length}</p>
+                    </div>
+                    </Link>
+                  </div>
                 </div>
                 {/* cart for desktop */}
                 <Link to='cart'>
