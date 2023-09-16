@@ -6,26 +6,48 @@ import { useState } from "react";
 
 const Products = () => {
     const [category, setCategory] = useState("All")
+    const [price, setPrice] = useState({ minPrice: 0, maxPrice: 0 })
     const { data: catProducts, isLoading } =
         useGetProductsByCategoryQuery({ category })
     const { data: allProducts, isLoading: loadingAllProudcts } = useGetAllProductsQuery()
-    console.log(allProducts?.products)
-    // filtering the products
+    console.log(allProducts?.products.map(product => product.price))
     let filteredProduct;
-    filteredProduct = category === "All" ? allProducts?.products : catProducts?.products;
+
+    if (category === "All") {
+        filteredProduct = allProducts?.products;
+    } else {
+        filteredProduct = catProducts?.products.filter(
+            (product) => product.category === category
+        );
+    }
+
+    if (price.minPrice > 0) {
+        filteredProduct = filteredProduct?.filter(
+            (product) =>
+                product.price >= price.minPrice && product.price <= price.maxPrice
+        );
+    }
 
     return (
-        <section className="grid grid-cols-1 md:grid-cols-5 bg-slate-900 min-h-screen">
-            <FilterProduct setCategory={setCategory} />
-            <div className="grid grid-cols-2 place-items-center  md:grid-cols-2 lg:grid-cols-3 gap-3 
+        <section className=" bg-slate-900 min-h-screen">
+            <div className="grid grid-cols-1 md:grid-cols-5">
+                <FilterProduct setCategory={setCategory} setPrice={setPrice} />
+                <div className="grid grid-cols-2   md:grid-cols-2 lg:grid-cols-3 gap-3 
              md:gap-8 py-12 md:col-span-4 px-3">
-                {
-                    loadingAllProudcts || isLoading ?
-                     <p className="md:mx-auto pl-56 md:pl-96 text-2xl font-bold font-serif text-white">Loading.....</p>
-                    :
-                    filteredProduct.
-                     map(product => <ProductCard key={product.id} product={product} />)
-                }
+                    {loadingAllProudcts || isLoading ? (
+                        <p className="md:mx-auto pl-56 md:pl-96 text-2xl font-bold font-serif text-white">
+                            Loading.....
+                        </p>
+                    ) : filteredProduct && filteredProduct.length > 0 ? (
+                        filteredProduct.map((product) => (
+                            <ProductCard key={product.id} product={product} />
+                        ))
+                    ) : (
+                        <p className="w-full text-lg font-bold font-serif text-white">
+                            No products found in the selected category and price range.
+                        </p>
+                    )}
+                </div>
             </div>
         </section>
     );
