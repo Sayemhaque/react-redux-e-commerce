@@ -12,8 +12,8 @@ const FeaturedProduct = () => {
             <SectionTitle
                 title={"Featured Product"}
             />
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-12 md:max-w-6xl 
-            mx-auto py-12 px-3 space-y-4 md:px-0">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-5 md:max-w-6xl 
+            mx-auto py-12 px-3  md:px-3">
                 {allProducts?.products.map(product =>
                     <FeatureProductCard
                         key={product.id}
