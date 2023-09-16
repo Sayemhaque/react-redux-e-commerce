@@ -1,18 +1,23 @@
 /* eslint-disable no-import-assign */
 import ProductCard from "./ProductCard";
 import FilterProduct from "../../components/FilterProduct";
-import { useGetProductsQuery } from "../../redux/feature/api/baseApi";
+import {  useGetAllProductsQuery, useGetProductsByCategoryQuery,} from "../../redux/feature/api/baseApi";
 import { useState } from "react";
 
 const Products = () => {
     const [category,setCategory] = useState("All")
-    const {data:products,isLoading} = useGetProductsQuery()
+    const {data:catProducts,isLoading:loadingCatProducts} = 
+    useGetProductsByCategoryQuery({category})
+    const {data:allProducts ,isLoading:loadingAllProudcts} = useGetAllProductsQuery()
+    console.log(allProducts?.products)
     // filtering the products
     let filteredProduct;
-    filteredProduct = category === "All" ? products :
-   products.filter(product => product.category === category) ;
+    filteredProduct = category === "All" ? allProducts?.products : catProducts?.products;
 
-   if(isLoading){
+   if(loadingAllProudcts){
+    return <p className="text-center text-2xl font-bold font-serif">Loading.....</p>
+}
+   if(loadingCatProducts){
     return <p className="text-center text-2xl font-bold font-serif">Loading.....</p>
 }
     return (

@@ -6,9 +6,9 @@ const FilterProduct = ({ setCategory}) => {
     const [active, setActive] = useState("All");
 
     useEffect(() => {
-        fetch("https://fakestoreapi.com/products/categories")
+        fetch("https://dummyjson.com/products/categories")
             .then(res => res.json())
-            .then(data => setCategories(["All", ...data]))
+            .then(data => setCategories(["All",...data]))
     }, []);
 
     const handleCategory = (categoryName) => {

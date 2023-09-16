@@ -45,17 +45,14 @@ function Navbar() {
                             <Link to={link.to} onClick={toogle} className="text-white font-semibold">
                                 {link.text}
                             </Link>
-                             {/* cart  for mobile*/}
-                    
                         </li>
                     ))}
                     {/* cart for desktop */}
-                <div className='hidden md:flex items-center gap-3'>
-                <CartIcon  totalQuantity={totalQuantity} />
-                <FavouriteIcon/>
-                </div>
+                    <div className='hidden md:flex items-center gap-3'>
+                        <CartIcon totalQuantity={totalQuantity} />
+                        <FavouriteIcon />
+                    </div>
                 </ul>
-
             </div>
         </nav>
     );
