@@ -7,7 +7,8 @@ const favProductSlice = createSlice({
     },
     reducers:{
         addToFavourite:(state,action) => {
-            state.favouriteProduct.push(action.payload)
+            const product = action.payload
+            state.favouriteProduct.push({fav:true,...product})
         },
         removeFavourite:(state,{payload}) => {
             state.favouriteProduct = 

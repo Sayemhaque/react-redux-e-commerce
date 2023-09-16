@@ -1,10 +1,10 @@
 import FeatureProductCard from "./FeatureProductCard";
 import SectionTitle from "./SectionTitle";
-import {  useGetAllProductsQuery} from "../redux/feature/api/baseApi";
+import { useGetAllProductsQuery } from "../redux/feature/api/baseApi";
 
 const FeaturedProduct = () => {
-    const {data:allProducts,isLoading} = useGetAllProductsQuery()
-    if(isLoading){
+    const { data: allProducts, isLoading } = useGetAllProductsQuery()
+    if (isLoading) {
         return <p className="text-center text-2xl font-bold font-serif">Loading.....</p>
     }
     return (

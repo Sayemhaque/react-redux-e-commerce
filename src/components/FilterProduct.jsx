@@ -22,12 +22,13 @@ const FilterProduct = ({ setCategory}) => {
                 <h4 className="text-2xl font-bold text-white text-center">Categories</h4>
                 <aside className="flex flex-row flex-wrap md:flex-col gap-2  text-center md:gap-5">
                 <select
-            className="block w-md md:w-full py-2 px-4 text-white bg-purple-800 bg-opacity-90"
+            className="block w-md   md:w-full py-2 px-4 text-white
+             bg-purple-800 bg-opacity-90"
             value={active}
             onChange={handleCategoryChange}
           >
             {categories.map((category) => (
-              <option  key={category} value={category}>
+              <option   key={category} value={category}>
                 {category}
               </option>
             ))}
