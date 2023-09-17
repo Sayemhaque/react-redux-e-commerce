@@ -1,6 +1,7 @@
 import FeatureProductCard from "./FeatureProductCard";
 import SectionTitle from "./SectionTitle";
 import { useGetAllProductsQuery } from "../redux/feature/api/baseApi";
+import { Toaster } from "react-hot-toast";
 
 const FeaturedProduct = () => {
     const { data: allProducts, isLoading } = useGetAllProductsQuery()
@@ -19,6 +20,10 @@ const FeaturedProduct = () => {
                         key={product.id}
                         product={product} />)}
             </div>
+            <Toaster
+                position="top-center"
+                reverseOrder={false}
+            />
         </section>
     );
 };

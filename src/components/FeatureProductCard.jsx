@@ -1,7 +1,7 @@
 import { FaEye, FaRegHeart, FaRegStar, FaShoppingCart, FaStar, } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/feature/cartSlice";
-import  Rating from "react-rating";
+import Rating from "react-rating";
 import { addToFavourite } from "../redux/feature/favProductSlice";
 /* eslint-disable react/prop-types */
 function FeatureProductCard({ product }) {
@@ -19,7 +19,7 @@ function FeatureProductCard({ product }) {
         </p>
       </div>
       <div className="px-1 md:px-4 py-5 space-y-3">
-      <p className="text-sm md:text-lg font-bold ">{product.title}</p>
+        <p className="text-sm md:text-lg font-bold ">{product.title}</p>
         <Rating
           readonly
           placeholderRating={product.rating}
@@ -29,11 +29,11 @@ function FeatureProductCard({ product }) {
         />
         <div className="flex flex-col sm:flex-row sm:items-center justify-between mt-5">
           <div className="text-xl flex items-center gap-2 justify-start">
-            <FaShoppingCart 
-            className="bg-purple-400 bg-opacity-60 w-8 h-8 md:w-10 md:h-10 md:p-2 p-1 rounded-full"
-             onClick={() => dispatch(addToCart(product))} />
-            <FaRegHeart onClick={() => dispatch(addToFavourite(product))} 
-            className="absolute top-3 right-0 bg-purple-800  w-8 h-8 md:w-10 md:h-10
+            <FaShoppingCart
+              className="bg-purple-400 bg-opacity-60 w-8 h-8 md:w-10 md:h-10 md:p-2 p-1 rounded-full"
+              onClick={() => dispatch(addToCart(product))} />
+            <FaRegHeart onClick={() => dispatch(addToFavourite(product))}
+              className="absolute top-3 right-0 bg-purple-800  w-8 h-8 md:w-10 md:h-10
              md:p-2 p-1 rounded-full" />
             <FaEye className="bg-purple-400 bg-opacity-60 w-8 h-8 md:w-10 md:h-10 md:p-2 p-1 rounded-full" />
           </div>

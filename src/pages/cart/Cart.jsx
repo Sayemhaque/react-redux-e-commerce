@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Button from "../../components/Button"
 import { FaTrash } from "react-icons/fa"
 import { clearCart, decreaseQuantity, increaseQuantity, removeProductFromCart } from '../../redux/feature/cartSlice';
+import { Toaster } from 'react-hot-toast';
 function CartPage() {
   const dispatch = useDispatch()
   const { cart, totalPrice } = useSelector((state) => state.cartSlice)
@@ -11,22 +12,26 @@ function CartPage() {
   }
   let totalQuantity = 0;
 
-// Loop through the cart and sum up the quantities
-for (const item of cart) {
-  totalQuantity += item.quantity;
-}
+  // Loop through the cart and sum up the quantities
+  for (const item of cart) {
+    totalQuantity += item.quantity;
+  }
 
   return (
     <>
+      <Toaster
+        position="top-center"
+        reverseOrder={false}
+      />
       {cart.length < 1 ? <p className='text-3xl font-bold text-center mt-12'>Cart is empty</p> :
         <div className="flex flex-col md:flex-row">
           <div className="md:w-3/4 p-4 mx-auto">
-            <h1 className="text-2xl font-semibold mb-4">Shopping Cart</h1>
+            <h1 className="text-2xl font-bold mb-4">Shopping Cart</h1>
             <table className="min-w-full table-auto">
               <thead>
                 <tr>
                   <th className="text-left px-4 py-2 border">Image</th>
-                  <th className="text-left px-4 py-2 border">Product</th>
+                  <th className="text-left px-4 py-2 border hidden">Product</th>
                   <th className="text-left px-4 py-2 border">Quantity</th>
                   <th className="text-left px-4 py-2 border">Price</th>
                   <th className="text-left px-4 py-2 border">Action</th>
@@ -36,21 +41,21 @@ for (const item of cart) {
                 {cart.map((item) => (
                   <tr key={item.id}>
                     <td className="border px-4 py-2 h-8 ">
-                      <img className='h-12 w-12' src={item.image} alt="" />
+                      <img className='h-12 w-12' src={item.thumbnail} alt="" />
                     </td>
-                    <td className="border px-4 py-2">{item.title}</td>
+                    <td className="border px-4 py-2 hidden">{item.title}</td>
                     <td className="border px-4 py-2">
                       <div className="flex justify-center items-center gap-5">
-                        <p className='text-2xl cursor-pointer'
-                         onClick={() => dispatch(increaseQuantity(item.id))}>+</p>
+                        <p className='text-2xl cursor-pointer border p-2'
+                          onClick={() => dispatch(increaseQuantity(item.id))}>➕</p>
                         {item.quantity}
-                        <p className='text-2xl cursor-pointer'
-                          onClick={() => dispatch(decreaseQuantity(item.id))}>-</p>
+                        <p className='text-2xl cursor-pointer border p-2'
+                          onClick={() => dispatch(decreaseQuantity(item.id))}>➖</p>
                       </div>
                     </td>
                     <td className="border px-4 py-2">
                       ${(item.quantity * item.price).toFixed(2)}
-                      </td>
+                    </td>
                     <td className="border px-4 py-2 cursor-pointer" onClick={() => handleRemoveFromCart(item.id)}><FaTrash /></td>
                   </tr>
                 ))}
@@ -58,7 +63,7 @@ for (const item of cart) {
             </table>
             <Button
               onClick={() =>
-              dispatch(clearCart())}
+                dispatch(clearCart())}
               title={"Clear cart"}
               style={"mt-5"}
             />

@@ -3,6 +3,7 @@ import ProductCard from "./ProductCard";
 import FilterProduct from "../../components/FilterProduct";
 import { useGetAllProductsQuery, useGetProductsByCategoryQuery, } from "../../redux/feature/api/baseApi";
 import { useState } from "react";
+import { Toaster } from "react-hot-toast";
 
 const Products = () => {
     const [category, setCategory] = useState("All")
@@ -10,9 +11,8 @@ const Products = () => {
     const { data: catProducts, isLoading } =
         useGetProductsByCategoryQuery({ category })
     const { data: allProducts, isLoading: loadingAllProudcts } = useGetAllProductsQuery()
-    console.log(allProducts?.products.map(product => product.price))
-    let filteredProduct;
 
+    let filteredProduct;
     if (category === "All") {
         filteredProduct = allProducts?.products;
     } else {
@@ -29,7 +29,7 @@ const Products = () => {
     }
 
     return (
-        <section className=" bg-slate-900 min-h-screen">
+        <section className="w-full bg-slate-900 min-h-screen">
             <div className="grid grid-cols-1 md:grid-cols-5">
                 <FilterProduct setCategory={setCategory} setPrice={setPrice} />
                 <div className="grid grid-cols-2   md:grid-cols-2 lg:grid-cols-3 gap-3 
@@ -49,6 +49,10 @@ const Products = () => {
                     )}
                 </div>
             </div>
+            <Toaster
+                position="top-center"
+                reverseOrder={false}
+            />
         </section>
     );
 };
