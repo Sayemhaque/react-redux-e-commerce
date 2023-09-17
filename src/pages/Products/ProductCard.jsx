@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
-import { FaShoppingCart, FaRegHeart, FaEye, FaRegStar, FaStar } from "react-icons/fa";
+import { FaRegHeart, FaEye} from "react-icons/fa";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../../redux/feature/cartSlice";
-import Rating from "react-rating";
 import { addToFavourite } from "../../redux/feature/favProductSlice";
 import { Link } from "react-router-dom";
+import AddToCart from "../../components/AddToCart";
+import ProductRating from "../../components/ProductRating";
 
 const ProductCard = ({ product }) => {
     const dispatch = useDispatch();
@@ -21,23 +21,17 @@ const ProductCard = ({ product }) => {
                 </p>
             </div>
             <div className="px-1 md:px-4 py-5 space-y-3">
-            <p className="text-sm md:text-lg font-bold ">{product.title}</p>
-                <Rating
-                    readonly
-                    placeholderRating={product.rating}
-                    emptySymbol={<FaRegStar className="text-yellow-400 text-sm md:text-md" />}
-                    placeholderSymbol={<FaStar className="text-yellow-400 text-sm md:text-md" />}
-                    fullSymbol={"s"}
-                />
+                <p className="text-sm md:text-lg font-bold ">{product.title}</p>
+                <ProductRating product={product}/>
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between mt-5">
                     <div className="text-xl flex items-center gap-2 justify-start">
-                        <FaShoppingCart title="add product to cart" className="bg-purple-400 bg-opacity-60 w-10 h-10 p-2 rounded-full" onClick={() => dispatch(addToCart(product))} />
-                        <FaRegHeart title="make favourite" onClick={() => dispatch(addToFavourite(product))} 
-                        className="absolute top-3 right-0 bg-purple-800  w-8 h-8 md:w-10 md:h-10
+                        <AddToCart product={product} />
+                        <FaRegHeart title="make favourite" onClick={() => dispatch(addToFavourite(product))}
+                            className="absolute top-3 right-0 bg-purple-800  w-8 h-8 md:w-10 md:h-10
                         md:p-2 p-1 rounded-full" />
-                       <Link to={`/product/${product.id}`}>
-                       <FaEye title="see  details" className="bg-purple-400 bg-opacity-60 w-10 h-10 p-2 rounded-full" />
-                       </Link>
+                        <Link to={`/product/${product.id}`}>
+                            <FaEye title="see  details" className="bg-purple-400 bg-opacity-60 w-10 h-10 p-2 rounded-full" />
+                        </Link>
                     </div>
                     <div className="absolute bottom-40 md:bottom-48 right-4">
                         <p
@@ -45,7 +39,7 @@ const ProductCard = ({ product }) => {
                     </div>
                 </div>
             </div>
-        </div>  
+        </div>
     );
 };
 

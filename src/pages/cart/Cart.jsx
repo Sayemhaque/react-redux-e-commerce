@@ -1,8 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux';
 import Button from "../../components/Button"
 import { FaTrash } from "react-icons/fa"
-import { clearCart, decreaseQuantity, increaseQuantity, removeProductFromCart } from '../../redux/feature/cartSlice';
+import { clearCart,removeProductFromCart } from '../../redux/feature/cartSlice';
 import { Toaster } from 'react-hot-toast';
+import QuantityAdjustment from '../../components/QuantityAdjustment';
 function CartPage() {
   const dispatch = useDispatch()
   const { cart, totalPrice } = useSelector((state) => state.cartSlice)
@@ -44,19 +45,12 @@ function CartPage() {
                       <img className='h-12 w-12' src={item.thumbnail} alt="" />
                     </td>
                     <td className="border px-4 py-2 hidden">{item.title}</td>
-                    <td className="border px-4 py-2">
-                      <div className="flex justify-center items-center gap-5">
-                        <p className='text-2xl cursor-pointer border p-2'
-                          onClick={() => dispatch(increaseQuantity(item.id))}>➕</p>
-                        {item.quantity}
-                        <p className='text-2xl cursor-pointer border p-2'
-                          onClick={() => dispatch(decreaseQuantity(item.id))}>➖</p>
-                      </div>
-                    </td>
+                    <QuantityAdjustment item={item}/>
                     <td className="border px-4 py-2">
                       ${(item.quantity * item.price).toFixed(2)}
                     </td>
-                    <td className="border px-4 py-2 cursor-pointer" onClick={() => handleRemoveFromCart(item.id)}><FaTrash /></td>
+                    <td className="border px-4 py-2 cursor-pointer"
+                     onClick={() => handleRemoveFromCart(item.id)}><FaTrash /></td>
                   </tr>
                 ))}
               </tbody>
