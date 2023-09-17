@@ -4,6 +4,7 @@ import App from "../App";
 import Home from "../pages/Home/Home";
 import CartPage from "../pages/cart/Cart";
 import FavouriteProduct from "../pages/Favourite/FavouriteProduct";
+import ProductDetails from "../pages/Products/ProductDetails";
 
 export const router = createBrowserRouter([
     {
@@ -25,6 +26,10 @@ export const router = createBrowserRouter([
             {
                 path:"favourite",
                 element:<FavouriteProduct/>
+            },
+            {
+                path:"product/:id",
+                element:<ProductDetails/>
             }
         ]
     },

@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/feature/cartSlice";
 import Rating from "react-rating";
 import { addToFavourite } from "../../redux/feature/favProductSlice";
+import { Link } from "react-router-dom";
 
 const ProductCard = ({ product }) => {
     const dispatch = useDispatch();
@@ -34,7 +35,9 @@ const ProductCard = ({ product }) => {
                         <FaRegHeart title="make favourite" onClick={() => dispatch(addToFavourite(product))} 
                         className="absolute top-3 right-0 bg-purple-800  w-8 h-8 md:w-10 md:h-10
                         md:p-2 p-1 rounded-full" />
-                        <FaEye title="see  details" className="bg-purple-400 bg-opacity-60 w-10 h-10 p-2 rounded-full" />
+                       <Link to={`/product/${product.id}`}>
+                       <FaEye title="see  details" className="bg-purple-400 bg-opacity-60 w-10 h-10 p-2 rounded-full" />
+                       </Link>
                     </div>
                     <div className="absolute bottom-40 md:bottom-48 right-4">
                         <p
@@ -42,8 +45,7 @@ const ProductCard = ({ product }) => {
                     </div>
                 </div>
             </div>
-        </div>
-
+        </div>  
     );
 };
 
