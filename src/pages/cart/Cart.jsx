@@ -59,7 +59,7 @@ function CartPage() {
               onClick={() =>
                 dispatch(clearCart())}
               title={"Clear cart"}
-              style={"mt-5"}
+              style={"px-5 py-1  bg-purple-600 bg-opacity-80 mt-5 rounded-md"}
             />
           </div>
 
