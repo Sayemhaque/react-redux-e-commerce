@@ -18,17 +18,20 @@ html, body {
   }
   
   /* Add this CSS to your stylesheet */
-@keyframes flyingProduct {
-  0% {
-    transform: translate(0, 0);
-    opacity: 1;
-  }
-  100% {
-    transform: translate(100px, -100px);
-    opacity: 0;
+/* Add this CSS to your stylesheet */
+.mySwiper {
+  slidesPerView: 3; /* Default for larger screens */
+  spaceBetween: 30px;
+}
+
+@media (max-width: 768px) {
+  .mySwiper {
+      slidesPerView: 2; /* 2 slides per view on screens up to 768px wide */
   }
 }
 
-.animate-flying-product {
-  animation: flyingProduct 1s ease-in-out forwards;
+@media (max-width: 480px) {
+  .mySwiper {
+      slidesPerView: 1; /* 1 slide per view on screens up to 480px wide */
+  }
 }

@@ -1,8 +1,9 @@
-import { FaEye, FaRegHeart, FaRegStar, FaShoppingCart, FaStar, } from "react-icons/fa";
+import { FaArrowAltCircleRight, FaRegHeart, FaRegStar, FaStar, } from "react-icons/fa";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../redux/feature/cartSlice";
 import Rating from "react-rating";
 import { addToFavourite } from "../redux/feature/favProductSlice";
+import { Link } from "react-router-dom";
+import AddToCart from "./AddToCart";
 /* eslint-disable react/prop-types */
 function FeatureProductCard({ product }) {
   const dispatch = useDispatch()
@@ -29,13 +30,13 @@ function FeatureProductCard({ product }) {
         />
         <div className="flex flex-col sm:flex-row sm:items-center justify-between mt-5">
           <div className="text-xl flex items-center gap-2 justify-start">
-            <FaShoppingCart
-              className="bg-purple-400 bg-opacity-60 w-8 h-8 md:w-10 md:h-10 md:p-2 p-1 rounded-full"
-              onClick={() => dispatch(addToCart(product))} />
+            <AddToCart product={product}/>
             <FaRegHeart onClick={() => dispatch(addToFavourite(product))}
               className="absolute top-3 right-0 bg-purple-800  w-8 h-8 md:w-10 md:h-10
              md:p-2 p-1 rounded-full" />
-            <FaEye className="bg-purple-400 bg-opacity-60 w-8 h-8 md:w-10 md:h-10 md:p-2 p-1 rounded-full" />
+            <Link to={`/product/${product.id}`}>
+              <FaArrowAltCircleRight title="see  details" className="bg-purple-400 bg-opacity-60 w-10 h-10 p-2 rounded-full" />
+            </Link>
           </div>
           <div className="absolute bottom-40 md:bottom-48 right-4">
             <p
