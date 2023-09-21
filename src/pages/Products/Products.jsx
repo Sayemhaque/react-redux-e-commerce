@@ -29,7 +29,7 @@ const Products = () => {
     }
 
     return (
-        <section className="w-full bg-slate-900 min-h-screen">
+        <section className="w-full bg-slate-300 min-h-screen">
             <div className="grid grid-cols-1 md:grid-cols-5">
                 <FilterProduct setCategory={setCategory} setPrice={setPrice} />
                 <div className="grid grid-cols-2   md:grid-cols-2 lg:grid-cols-3 gap-3 

@@ -6,7 +6,7 @@ import ProductCategories from "../../components/ProductCategories";
 
 const Home = () => {
     return (
-        <div className="bg-slate-900">
+        <div className="bg-slate-300">
           <HeroSection/>
           <Modal/>
           <ProductCategories/>

@@ -53,10 +53,10 @@ function Hero() {
               <img className='w-full h-[400px] md:h-[600px] object-cover' src={slide.imageUrl} alt={slide.title} />
               <div className="absolute inset-0 flex items-center flex-col justify-center
                text-white  bg-black bg-opacity-50">
-                <p className='text-xl font-bold font-serif md:text-5xl'>    {slide.title}</p>
+                <p className='text-sm  font-bold font-serif sm:text-xl md:text-4xl'>{slide.title}</p>
                 <Button
                   title={slide.buttonTitle}
-                  style={"text-md px-5 py-1 bg-purple-600 bg-opacity-80 rounded-md mt-12"}
+                  style={"text-md px-3 py-1 md:px-12 md:py-3 bg-purple-600 bg-opacity-80 rounded-md mt-12"}
                 />
               </div>
             </div>

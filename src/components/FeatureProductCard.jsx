@@ -11,7 +11,7 @@ function FeatureProductCard({ product }) {
   return (
     <div
       className="cursor-pointer bg-purple-600 bg-opacity-70
-     w-full hover:scale-105 duration-500 text-white shadow-md rounded-lg relative">
+     w-full hover:scale-105 duration-500 text-white shadow-md rounded-lg relative overflow-hidden">
       <img src={product.thumbnail} alt={product.title}
         className="w-full h-40 md:h-64 object-cover" />
       <div className="absolute top-3 left-3">

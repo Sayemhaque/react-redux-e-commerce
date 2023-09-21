@@ -9,12 +9,12 @@ const CartCard = ({ product }) => {
     const dispatch = useDispatch()
     return (
         <div className="bg-purple-600 bg-opacity-80 
-        text-white flex items-center gap-12 mb-5 rounded-xl overflow-hidden shadow-lg">
-            <img className="w-4/12 h-32 md:w-6/12 md:h-72" src={product.thumbnail} alt="" />
+        text-white flex items-center gap-3  md:gap-5 lg:gap-12 mb-5 rounded-xl overflow-hidden shadow-lg">
+            <img className="w-4/12 h-32 sm:w-4/12 sm:h-44 md:w-6/12 md:h-72" src={product.thumbnail} alt="" />
             <div className="py-2 space-y-4">
                 <p className="font-bold text-md md:text-2xl font-serif">{product.title}</p>
-                <ProductRating product={product}/>
-                <div className="flex items-center  gap-4">
+                <ProductRating product={product} />
+                <div className="flex items-center  gap-2">
                     <QuantityAdjustment item={product} />
                     <p className="font-bold text-sm md:text-md">${product.price * product.quantity}</p>
                     <FaTrash className="cursor-pointer text-gray-300"
