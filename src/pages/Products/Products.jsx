@@ -4,6 +4,7 @@ import FilterProduct from "../../components/FilterProduct";
 import { useGetAllProductsQuery, useGetProductsByCategoryQuery, } from "../../redux/feature/api/baseApi";
 import { useState } from "react";
 import { Toaster } from "react-hot-toast";
+import Loading from "../../components/Loading";
 
 const Products = () => {
     const [category, setCategory] = useState("All")
@@ -27,6 +28,9 @@ const Products = () => {
                 product.price >= price.minPrice && product.price <= price.maxPrice
         );
     }
+    if(loadingAllProudcts || isLoading) {
+        return <Loading/>
+    }
 
     return (
         <section className="w-full bg-slate-300 min-h-screen">
@@ -34,19 +38,15 @@ const Products = () => {
                 <FilterProduct setCategory={setCategory} setPrice={setPrice} />
                 <div className="grid grid-cols-2   md:grid-cols-2 lg:grid-cols-3 gap-3 
              md:gap-8 py-12 md:col-span-4 px-3">
-                    {loadingAllProudcts || isLoading ? (
-                        <p className="md:mx-auto pl-56 md:pl-96 text-2xl font-bold font-serif text-white">
-                            Loading.....
-                        </p>
-                    ) : filteredProduct && filteredProduct.length > 0 ? (
-                        filteredProduct.map((product) => (
-                            <ProductCard key={product.id} product={product} />
-                        ))
-                    ) : (
-                        <p className="w-full text-lg font-bold font-serif text-white">
-                            No products found in the selected category and price range.
-                        </p>
-                    )}
+                    {filteredProduct && filteredProduct.length > 0 ? (
+                            filteredProduct?.map((product) => (
+                                <ProductCard key={product.id} product={product} />
+                            ))
+                        ) : (
+                            <p className="w-full text-lg font-bold font-serif text-black text-center">
+                                No products found.
+                            </p>
+                        )}
                 </div>
             </div>
             <Toaster

@@ -22,7 +22,7 @@ function CartPage() {
         position="top-center"
         reverseOrder={false}
       />
-      {cart.length < 1 ? <p className='text-3xl font-bold text-center mt-12'>
+      {cart.length < 1 ? <p className='text-3xl font-bold text-center'>
         Cart is empty
       </p> :
         <div className='grid grid-cols-1  md:grid-cols-3 gap-5  py-5 md:px-3 px-3'>

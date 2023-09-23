@@ -11,36 +11,36 @@ import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 export const router = createBrowserRouter([
     {
-        path:"/",
-        element:<App/>,
-        children:[
+        path: "/",
+        element: <App />,
+        children: [
             {
-                path:"/",
-                element:<Home/>
+                path: "/",
+                element: <Home />
             },
             {
-                path:"products",
-                element:<Products/>
+                path: "products",
+                element: <Products />
             },
             {
-                path:"cart",
-                element:<PrivateRoute><CartPage/></PrivateRoute>
+                path: "cart",
+                element: <PrivateRoute><CartPage /></PrivateRoute>
             },
             {
-                path:"favourite",
-                element:<FavouriteProduct/>
+                path: "favourite",
+                element: <FavouriteProduct />
             },
             {
-                path:"product/:id",
-                element:<ProductDetails/>
+                path: "product/:id",
+                element: <PrivateRoute><ProductDetails /></PrivateRoute>
             },
             {
-                path:"signin",
-                element:<Signin/>
+                path: "signin",
+                element: <Signin />
             },
             {
-                path:"signup",
-                element:<Signup/>
+                path: "signup",
+                element: <Signup />
             }
         ]
     },

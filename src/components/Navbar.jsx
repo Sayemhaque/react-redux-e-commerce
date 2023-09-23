@@ -6,20 +6,20 @@ import NavBarToogleIcons from './NavBarToogleIcons';
 import CartIcon from './CartIcon';
 import FavouriteIcon from './FavouriteIcon';
 import { UserButton, useUser } from '@clerk/clerk-react';
+import Button from './Button';
 
 
 const navLinks = [
     { text: 'Home', to: '/' },
     { text: 'Products', to: 'products' },
-    { text: 'Sign In', to: 'signin' },
     { text: 'Contact', to: '/contact' },
     { text: '', to: '/cart', icon: <FaShoppingBag /> },
     // Add more navigation items as needed
 ];
 
 function Navbar() {
-    const { isLoaded, isSignedIn, user} = useUser();
-    console.log(user,isLoaded,isSignedIn)
+    const { isLoaded, isSignedIn, user } = useUser();
+    console.log(user, isLoaded, isSignedIn)
     const [isToggled, toogle] = useToggle(false)
     const { cart } = useSelector((state) => state.cartSlice)
     let totalQuantity = 0;
@@ -41,6 +41,7 @@ function Navbar() {
                     <div className='flex items-center gap-4 md:hidden'>
                         <CartIcon style={`flex md:hidden`} totalQuantity={totalQuantity} />
                         <FavouriteIcon style={"flex md:hidden"} />
+                        <UserButton />
                     </div>
                 </div>
                 <ul className={`${!isToggled ? "hidden md:flex flex-col md:flex-row gap-3 items-center" : "flex flex-col md:flex-row gap-3 "}`}>
@@ -51,11 +52,24 @@ function Navbar() {
                             </Link>
                         </li>
                     ))}
+                    {!isSignedIn ? <Link to="signin"  className="md:hidden text-white font-semibold">
+                            <Button 
+                             title={"Sign In"}
+                             style={"bg-purple-900 px-5 py-1 rounded-lg"}
+                            />
+                        </Link> : ""}
                     {/* cart for desktop */}
                     <div className='hidden md:flex items-center gap-3'>
+                        {!isSignedIn ? <Link to="signin" className="text-white font-semibold">
+                            <Button 
+                             title={"Sign In"}
+                             style={"bg-purple-900 px-5 py-1 rounded-lg"}
+                            />
+                        </Link> : ""}
                         <CartIcon totalQuantity={totalQuantity} />
                         <FavouriteIcon />
-                        <UserButton/>
+                        <UserButton />
+
                     </div>
                 </ul>
             </div>
