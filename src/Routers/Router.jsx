@@ -5,6 +5,9 @@ import Home from "../pages/Home/Home";
 import CartPage from "../pages/cart/Cart";
 import FavouriteProduct from "../pages/Favourite/FavouriteProduct";
 import ProductDetails from "../pages/Products/ProductDetails";
+import Signin from "../pages/signIn/SignIn";
+import Signup from "../pages/SignUp/Signup";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 export const router = createBrowserRouter([
     {
@@ -21,7 +24,7 @@ export const router = createBrowserRouter([
             },
             {
                 path:"cart",
-                element:<CartPage/>
+                element:<PrivateRoute><CartPage/></PrivateRoute>
             },
             {
                 path:"favourite",
@@ -30,6 +33,14 @@ export const router = createBrowserRouter([
             {
                 path:"product/:id",
                 element:<ProductDetails/>
+            },
+            {
+                path:"signin",
+                element:<Signin/>
+            },
+            {
+                path:"signup",
+                element:<Signup/>
             }
         ]
     },

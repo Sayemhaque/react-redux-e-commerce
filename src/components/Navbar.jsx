@@ -5,17 +5,21 @@ import { useSelector } from 'react-redux';
 import NavBarToogleIcons from './NavBarToogleIcons';
 import CartIcon from './CartIcon';
 import FavouriteIcon from './FavouriteIcon';
+import { UserButton, useUser } from '@clerk/clerk-react';
+
 
 const navLinks = [
     { text: 'Home', to: '/' },
     { text: 'Products', to: 'products' },
-    { text: 'About Us', to: '/about' },
+    { text: 'Sign In', to: 'signin' },
     { text: 'Contact', to: '/contact' },
     { text: '', to: '/cart', icon: <FaShoppingBag /> },
     // Add more navigation items as needed
 ];
 
 function Navbar() {
+    const { isLoaded, isSignedIn, user} = useUser();
+    console.log(user,isLoaded,isSignedIn)
     const [isToggled, toogle] = useToggle(false)
     const { cart } = useSelector((state) => state.cartSlice)
     let totalQuantity = 0;
@@ -51,6 +55,7 @@ function Navbar() {
                     <div className='hidden md:flex items-center gap-3'>
                         <CartIcon totalQuantity={totalQuantity} />
                         <FavouriteIcon />
+                        <UserButton/>
                     </div>
                 </ul>
             </div>
