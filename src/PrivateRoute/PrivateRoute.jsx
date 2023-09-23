@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+/* eslint-disable react/prop-types *////
 import { RedirectToSignIn, useUser } from "@clerk/clerk-react";
 
 const PrivateRoute = ({children}) => {
