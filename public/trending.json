@@ -3,7 +3,7 @@
     "id": 2344,
     "title": "Samsung Galaxy S21",
     "description": "The latest flagship smartphone from Samsung.",
-    "price": 799.99,
+    "price": 799,
     "discountPercentage": 10.0,
     "rating": 4.85,
     "stock": 120,
@@ -22,7 +22,7 @@
     "id": 2323,
     "title": "Sony 55-inch 4K Smart TV",
     "description": "Immerse yourself in stunning 4K visuals with this Sony TV.",
-    "price": 899.99,
+    "price": 899,
     "discountPercentage": 15.0,
     "rating": 4.75,
     "stock": 55,
@@ -41,7 +41,7 @@
     "id": 232,
     "title": "Nikon D850 DSLR Camera",
     "description": "Capture professional-quality photos with this Nikon DSLR camera.",
-    "price": 2499.99,
+    "price": 2499,
     "discountPercentage": 5.0,
     "rating": 4.92,
     "stock": 30,
@@ -60,7 +60,7 @@
     "id": 542,
     "title": "Bose QuietComfort 35 II Headphones",
     "description": "Experience premium noise-canceling headphones from Bose.",
-    "price": 349.99,
+    "price": 349,
     "discountPercentage": 8.0,
     "rating": 4.68,
     "stock": 75,
@@ -79,7 +79,7 @@
     "id": 323,
     "title": "Fitbit Versa 3 Smartwatch",
     "description": "Stay active and connected with the Fitbit Versa 3 smartwatch.",
-    "price": 179.99,
+    "price": 179,
     "discountPercentage": 10.0,
     "rating": 4.55,
     "stock": 100,
@@ -93,5 +93,64 @@
       "https://i.dummyjson.com/data/products/6/4.jpg",
       "https://i.dummyjson.com/data/products/6/thumbnail.jpg"
     ]
-  }        
+  },
+  {
+    "id": 324,
+    "title": "Sony WH-1000XM4 Wireless Headphones",
+    "description": "Immerse yourself in music with the Sony WH-1000XM4 wireless headphones.",
+    "price": 299,
+    "discountPercentage": 15.0,
+    "rating": 4.75,
+    "stock": 50,
+    "brand": "Sony",
+    "category": "audio",
+    "thumbnail": "https://i0.wp.com/najemstarcall.com/wp-content/uploads/2021/05/Sony-wh-1000XM4-7.jpg?fit=800%2C800&ssl=1",
+    "images": [
+        "https://i.dummyjson.com/data/products/7/1.jpg",
+        "https://i.dummyjson.com/data/products/7/2.jpg",
+        "https://i.dummyjson.com/data/products/7/3.jpg",
+        "https://i.dummyjson.com/data/products/7/4.jpg",
+        "https://i.dummyjson.com/data/products/7/thumbnail.jpg"
+    ]
+},
+{
+  "id": 325,
+  "title": "Samsung Galaxy S21 Ultra",
+  "description": "Experience the ultimate smartphone with the Samsung Galaxy S21 Ultra.",
+  "price": 1199,
+  "discountPercentage": 8.0,
+  "rating": 4.85,
+  "stock": 30,
+  "brand": "Samsung",
+  "category": "smartphones",
+  "thumbnail": "https://m.media-amazon.com/images/I/61tefwMCDxL.jpg",
+  "images": [
+      "https://i.dummyjson.com/data/products/8/1.jpg",
+      "https://i.dummyjson.com/data/products/8/2.jpg",
+      "https://i.dummyjson.com/data/products/8/3.jpg",
+      "https://i.dummyjson.com/data/products/8/4.jpg",
+      "https://i.dummyjson.com/data/products/8/thumbnail.jpg"
+  ]
+},
+{
+  "id": 326,
+  "title": "Apple MacBook Pro 13-inch",
+  "description": "Experience power and portability with the Apple MacBook Pro 13-inch.",
+  "price": 1499,
+  "discountPercentage": 12.0,
+  "rating": 4.9,
+  "stock": 20,
+  "brand": "Apple",
+  "category": "laptops",
+  "thumbnail": "https://collection.bancomontepio.pt/fotos/produtos/M_1/mbp_silver_select_202206_geo_pt_131255185662c6abaee31f2.jpeg",
+  "images": [
+      "https://i.dummyjson.com/data/products/9/1.jpg",
+      "https://i.dummyjson.com/data/products/9/2.jpg",
+      "https://i.dummyjson.com/data/products/9/3.jpg",
+      "https://i.dummyjson.com/data/products/9/4.jpg",
+      "https://i.dummyjson.com/data/products/9/thumbnail.jpg"
+  ]
+}
+
+        
 ]

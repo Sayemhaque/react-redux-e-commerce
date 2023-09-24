@@ -41,15 +41,13 @@ const ProductCategories = () => {
         <SectionTitle
           title={"Product Categories"}
         />
-        <ul className="grid grid-cols-1  md:grid-cols-2  gap-3 md:gap-12
-         md:max-w-6xl mx-auto px-3 py-12">
+        <ul className="grid grid-cols-2  md:grid-cols-3  gap-3 md:gap-12
+         md:max-w-6xl mx-auto px-3 py-5">
           {categories.map((category) => (
             <div key={category.id}>
               <li
                 className="bg-purple-800 
-                bg-opacity-80 p-4 rounded-md
-                 shadow-md hover:shadow-lg 
-                 transition duration-300 ease-in-out transform hover:scale-105">
+                bg-opacity-80 p-4 rounded-md">
                  <a href="#" className="font-medium text-xl md:text-3xl">
                   <p className="text-2xl md:text-5xl py-4">    {category.icon}</p>
                   {category.name}

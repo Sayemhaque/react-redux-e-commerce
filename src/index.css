@@ -17,21 +17,5 @@ html, body {
     background-position: center center; /* Centers the background image both horizontally and vertically */
   }
   
-  /* Add this CSS to your stylesheet */
-/* Add this CSS to your stylesheet */
-.mySwiper {
-  slidesPerView: 3; /* Default for larger screens */
-  spaceBetween: 30px;
-}
 
-@media (max-width: 768px) {
-  .mySwiper {
-      slidesPerView: 2; /* 2 slides per view on screens up to 768px wide */
-  }
-}
 
-@media (max-width: 480px) {
-  .mySwiper {
-      slidesPerView: 1; /* 1 slide per view on screens up to 480px wide */
-  }
-}
