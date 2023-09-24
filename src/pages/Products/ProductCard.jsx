@@ -14,7 +14,7 @@ const ProductCard = ({ product }) => {
             className="cursor-pointer bg-purple-600 bg-opacity-70
              w-full hover:scale-105 duration-500 text-white shadow-md rounded-lg relative overflow-hidden">
             <img src={product.thumbnail} alt={product.title}
-                className="w-full h-40 md:h-64 object-cover" />
+                className="w-full h-40 md:h-64 object-contain" />
             <div className="absolute top-3 left-3">
                 <p className="uppercase bg-purple-900 text-sm md:text-md font-semibold inline-block px-1 md:px-3 sm:w-auto">
                     {product.category}

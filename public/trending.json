@@ -1,0 +1,97 @@
+[
+  {
+    "id": 2344,
+    "title": "Samsung Galaxy S21",
+    "description": "The latest flagship smartphone from Samsung.",
+    "price": 799.99,
+    "discountPercentage": 10.0,
+    "rating": 4.85,
+    "stock": 120,
+    "brand": "Samsung",
+    "category": "smartphones",
+    "thumbnail": "https://satkhiraservice.com/wp-content/uploads/2021/08/Samsung-Galaxy-S21-Plus-image.jpeg",
+    "images": [
+      "https://i.dummyjson.com/data/products/2/1.jpg",
+      "https://i.dummyjson.com/data/products/2/2.jpg",
+      "https://i.dummyjson.com/data/products/2/3.jpg",
+      "https://i.dummyjson.com/data/products/2/4.jpg",
+      "https://i.dummyjson.com/data/products/2/thumbnail.jpg"
+    ]
+  },
+  {
+    "id": 2323,
+    "title": "Sony 55-inch 4K Smart TV",
+    "description": "Immerse yourself in stunning 4K visuals with this Sony TV.",
+    "price": 899.99,
+    "discountPercentage": 15.0,
+    "rating": 4.75,
+    "stock": 55,
+    "brand": "Sony",
+    "category": "televisions",
+    "thumbnail": "https://www.cloud.ryanscomputers.com/cdn/products/main/sony-bravia-xr-a80k-55-inch-4k-uhd-oled-hdr-smart-21665400504.webp",
+    "images": [
+      "https://i.dummyjson.com/data/products/3/1.jpg",
+      "https://i.dummyjson.com/data/products/3/2.jpg",
+      "https://i.dummyjson.com/data/products/3/3.jpg",
+      "https://i.dummyjson.com/data/products/3/4.jpg",
+      "https://i.dummyjson.com/data/products/3/thumbnail.jpg"
+    ]
+  },
+  {
+    "id": 232,
+    "title": "Nikon D850 DSLR Camera",
+    "description": "Capture professional-quality photos with this Nikon DSLR camera.",
+    "price": 2499.99,
+    "discountPercentage": 5.0,
+    "rating": 4.92,
+    "stock": 30,
+    "brand": "Nikon",
+    "category": "cameras",
+    "thumbnail": "https://www.floralimited.com//Files/Products/NIKON/RegularImage/Nikon-D850-DSLR-Camera-AF-S-24-120mm-f4G-ED-VR-Kit-01.jpg",
+    "images": [
+      "https://i.dummyjson.com/data/products/4/1.jpg",
+      "https://i.dummyjson.com/data/products/4/2.jpg",
+      "https://i.dummyjson.com/data/products/4/3.jpg",
+      "https://i.dummyjson.com/data/products/4/4.jpg",
+      "https://i.dummyjson.com/data/products/4/thumbnail.jpg"
+    ]
+  },
+  {
+    "id": 542,
+    "title": "Bose QuietComfort 35 II Headphones",
+    "description": "Experience premium noise-canceling headphones from Bose.",
+    "price": 349.99,
+    "discountPercentage": 8.0,
+    "rating": 4.68,
+    "stock": 75,
+    "brand": "Bose",
+    "category": "headphones",
+    "thumbnail": "https://adminapi.applegadgetsbd.com/storage/media/large/2639-76549.jpg",
+    "images": [
+      "https://i.dummyjson.com/data/products/5/1.jpg",
+      "https://i.dummyjson.com/data/products/5/2.jpg",
+      "https://i.dummyjson.com/data/products/5/3.jpg",
+      "https://i.dummyjson.com/data/products/5/4.jpg",
+      "https://i.dummyjson.com/data/products/5/thumbnail.jpg"
+    ]
+  },
+  {
+    "id": 323,
+    "title": "Fitbit Versa 3 Smartwatch",
+    "description": "Stay active and connected with the Fitbit Versa 3 smartwatch.",
+    "price": 179.99,
+    "discountPercentage": 10.0,
+    "rating": 4.55,
+    "stock": 100,
+    "brand": "Fitbit",
+    "category": "wearables",
+    "thumbnail": "https://rukminim2.flixcart.com/image/850/1000/kapoo7k0/smartwatch/m/q/4/fb507rgpk-android-ios-fitbit-original-imafs7uvkggybbfu.jpeg?q=20",
+    "images": [
+      "https://i.dummyjson.com/data/products/6/1.jpg",
+      "https://i.dummyjson.com/data/products/6/2.jpg",
+      "https://i.dummyjson.com/data/products/6/3.jpg",
+      "https://i.dummyjson.com/data/products/6/4.jpg",
+      "https://i.dummyjson.com/data/products/6/thumbnail.jpg"
+    ]
+  }        
+]

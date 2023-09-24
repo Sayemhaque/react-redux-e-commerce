@@ -2,6 +2,7 @@ import FeaturedProduct from "../../components/FeaturedProduct";
 import HeroSection from "../../components/Hero";
 import Modal from "../../components/Modal";
 import ProductCategories from "../../components/ProductCategories";
+import TrendingProducts from "./TrendingProducts/TrendingProducts";
 // import Review from "../../components/Review";
 
 const Home = () => {
@@ -10,6 +11,7 @@ const Home = () => {
           <HeroSection/>
           <Modal/>
           <ProductCategories/>
+          <TrendingProducts/>
           <FeaturedProduct/>
           {/* <Review/> */}
         </div>
