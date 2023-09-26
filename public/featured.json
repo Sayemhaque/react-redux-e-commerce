@@ -1,0 +1,154 @@
+[
+    {
+        "id": 327,
+        "title": "Dell XPS 15 Laptop",
+        "description": "Elevate your productivity with the Dell XPS 15 Laptop.",
+        "price": 1599,
+        "discountPercentage": 10.0,
+        "rating": 4.8,
+        "stock": 15,
+        "brand": "Dell",
+        "category": "laptops",
+        "thumbnail": "https://lappyvalley.com/wp-content/uploads/2021/12/notebook_laptop_xps__jGYDo-2.jpg",
+        "images": [
+          "https://example.com/product1_image1.jpg",
+          "https://example.com/product1_image2.jpg",
+          "https://example.com/product1_image3.jpg",
+          "https://example.com/product1_image4.jpg",
+          "https://example.com/product1_thumbnail.jpg"
+        ]
+      },
+      {
+        "id": 331,
+        "title": "Nike Air Max 270 Running Shoes",
+        "description": "Experience unmatched comfort and style with the Nike Air Max 270 Running Shoes for men.",
+        "price": 129.99,
+        "discountPercentage": 15.0,
+        "rating": 4.7,
+        "stock": 30,
+        "brand": "Nike",
+        "category": "Men's Shoes",
+        "thumbnail": "https://5.imimg.com/data5/CF/YD/BL/SELLER-24989634/nike-air-max-270-sports-shoes-500x500.jpg",
+        "images": [
+          "https://example.com/mens-shoes/nike-air-max-270-image1.jpg",
+          "https://example.com/mens-shoes/nike-air-max-270-image2.jpg",
+          "https://example.com/mens-shoes/nike-air-max-270-image3.jpg",
+          "https://example.com/mens-shoes/nike-air-max-270-image4.jpg",
+          "https://example.com/mens-shoes/nike-air-max-270-thumbnail.jpg"
+        ]
+      },
+      {
+        "id": 332,
+        "title": "Adidas Ultraboost Running Shoes",
+        "description": "Elevate your running game with the comfort and style of Adidas Ultraboost Running Shoes for women.",
+        "price": 139.99,
+        "discountPercentage": 10.0,
+        "rating": 4.8,
+        "stock": 25,
+        "brand": "Adidas",
+        "category": "Women's Shoes",
+        "thumbnail": "https://assets.adidas.com/images/w_600,f_auto,q_auto/ae75e8599c6146e9985faf150187bbac_9366/Ultraboost_1.0_Shoes_White_HQ2163_01_standard.jpg",
+        "images": [
+          "https://example.com/womens-shoes/adidas-ultraboost-image1.jpg",
+          "https://example.com/womens-shoes/adidas-ultraboost-image2.jpg",
+          "https://example.com/womens-shoes/adidas-ultraboost-image3.jpg",
+          "https://example.com/womens-shoes/adidas-ultraboost-image4.jpg",
+          "https://example.com/womens-shoes/adidas-ultraboost-thumbnail.jpg"
+        ]
+      },
+      {
+        "id": 333,
+        "title": "Chanel No. 5 Eau de Parfum",
+        "description": "Indulge in the timeless elegance of Chanel No. 5 Eau de Parfum.",
+        "price": 129.99,
+        "discountPercentage": 5.0,
+        "rating": 4.9,
+        "stock": 40,
+        "brand": "Chanel",
+        "category": "Fragrances",
+        "thumbnail": "https://buyperfumeinbangladesh.com/wp-content/uploads/2017/01/Chanel-No.-5-Perfume-100ml-EDP-for-Women.jpg",
+        "images": [
+          "https://example.com/fragrances/chanel-no5-image1.jpg",
+          "https://example.com/fragrances/chanel-no5-image2.jpg",
+          "https://example.com/fragrances/chanel-no5-image3.jpg",
+          "https://example.com/fragrances/chanel-no5-image4.jpg",
+          "https://example.com/fragrances/chanel-no5-thumbnail.jpg"
+        ]
+      },
+      {
+        "id": 334,
+        "title": "La Roche-Posay Hydrating Cleanser",
+        "description": "Revitalize your skin with the nourishing La Roche-Posay Hydrating Cleanser.",
+        "price": 19.99,
+        "discountPercentage": 10.0,
+        "rating": 4.7,
+        "stock": 50,
+        "brand": "La Roche-Posay",
+        "category": "Skin Care",
+        "thumbnail": "https://8c3412d76225d04d7baa-be98b6ea17920953fb931282eff9a681.images.lovelyskin.com/vcbpa4qt_202308082107248383.jpg",
+        "images": [
+          "https://example.com/skincare/la-roche-posay-cleanser-image1.jpg",
+          "https://example.com/skincare/la-roche-posay-cleanser-image2.jpg",
+          "https://example.com/skincare/la-roche-posay-cleanser-image3.jpg",
+          "https://example.com/skincare/la-roche-posay-cleanser-image4.jpg",
+          "https://example.com/skincare/la-roche-posay-cleanser-thumbnail.jpg"
+        ]
+      },
+      {
+        "id": 335,
+        "title": "Organic Fresh Produce Bundle",
+        "description": "Enjoy healthy eating with our Organic Fresh Produce Bundle, featuring a variety of organic fruits and vegetables.",
+        "price": 49.99,
+        "discountPercentage": 0.0,
+        "rating": 4.8,
+        "stock": 100,
+        "brand": "Organic Farms",
+        "category": "Groceries",
+        "thumbnail": "https://cdn.freshharvest.com/Home/Images/Items/_formatted/Berry_Bundle_Revised_1_Desktop_20230823150251.jpg",
+        "images": [
+          "https://example.com/groceries/organic-produce-bundle-image1.jpg",
+          "https://example.com/groceries/organic-produce-bundle-image2.jpg",
+          "https://example.com/groceries/organic-produce-bundle-image3.jpg",
+          "https://example.com/groceries/organic-produce-bundle-image4.jpg",
+          "https://example.com/groceries/organic-produce-bundle-thumbnail.jpg"
+        ]
+      },
+      {
+        "id": 336,
+        "title": "Modern Leather Sofa Set",
+        "description": "Upgrade your living space with our stylish Modern Leather Sofa Set, featuring a sofa, loveseat, and coffee table.",
+        "price": 999.99,
+        "discountPercentage": 8.0,
+        "rating": 4.7,
+        "stock": 20,
+        "brand": "Elegance Living",
+        "category": "Furniture",
+        "thumbnail": "https://www.sjpgsofa.com/uploads/20225445/top-grain-leather-sofa-set-modern-design17190740536.jpg",
+        "images": [
+          "https://example.com/furniture/modern-sofa-set-image1.jpg",
+          "https://example.com/furniture/modern-sofa-set-image2.jpg",
+          "https://example.com/furniture/modern-sofa-set-image3.jpg",
+          "https://example.com/furniture/modern-sofa-set-image4.jpg",
+          "https://example.com/furniture/modern-sofa-set-thumbnail.jpg"
+        ]
+      },
+      {
+        "id": 337,
+        "title": "Michael Kors Women's Runway Watch",
+        "description": "Enhance your style with the elegance of the Michael Kors Women's Runway Watch.",
+        "price": 199.99,
+        "discountPercentage": 10.0,
+        "rating": 4.6,
+        "stock": 50,
+        "brand": "Michael Kors",
+        "category": "Women's Watches",
+        "thumbnail": "https://cdn.cimri.io/image/1000x1000/-michael-kors-mk3418-kadin-kol-saati_92182875.jpg",
+        "images": [
+          "https://example.com/womens-watches/michael-kors-runway-watch-image1.jpg",
+          "https://example.com/womens-watches/michael-kors-runway-watch-image2.jpg",
+          "https://example.com/womens-watches/michael-kors-runway-watch-image3.jpg",
+          "https://example.com/womens-watches/michael-kors-runway-watch-image4.jpg",
+          "https://example.com/womens-watches/michael-kors-runway-watch-thumbnail.jpg"
+        ]
+      }          
+]

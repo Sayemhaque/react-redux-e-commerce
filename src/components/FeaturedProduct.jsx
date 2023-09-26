@@ -1,15 +1,17 @@
+import { useEffect, useState } from "react";
 import FeatureProductCard from "./FeatureProductCard";
 import SectionTitle from "./SectionTitle";
-import { useGetAllProductsQuery } from "../redux/feature/api/baseApi";
 import { Toaster } from "react-hot-toast";
-import Loading from "./Loading";
 
 const FeaturedProduct = () => {
-  const { data: allProducts, isLoading } = useGetAllProductsQuery()
+  const [products, setProducts] = useState([])
 
- if(isLoading) {
-  return <Loading/>
- }
+  useEffect(() => {
+      fetch("featured.json")
+          .then(res => res.json())
+          .then(data => setProducts(data))
+  },)
+
   return (
     <section>
       <SectionTitle
@@ -17,7 +19,7 @@ const FeaturedProduct = () => {
       />
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-5 md:max-w-6xl 
             mx-auto py-12 px-3  md:px-3">
-        {allProducts?.products.map(product =>
+        {products?.map(product =>
           <FeatureProductCard
             key={product.id}
             product={product} />)}
