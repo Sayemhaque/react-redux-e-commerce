@@ -1,27 +1,22 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useState } from "react";
+import {  useState } from "react";
+import { useGetCategoryiesQuery } from "../redux/feature/api/baseApi";
 
 const FilterProduct = ({ setCategory, setPrice }) => {
-  const [categories, setCategories] = useState([]);
   const [active, setActive] = useState("All");
-
-  useEffect(() => {
-    fetch("https://dummyjson.com/products/categories")
-      .then(res => res.json())
-      .then(data => setCategories(["All", ...data]))
-  }, []);
-
+  const {data:categories} = useGetCategoryiesQuery()
+  
   const handleCategoryChange = (e) => {
     setCategory(e.target.value);
     setActive(e.target.value);
   };
-
-
+ 
   const handleSetPrice = (e) => {
     const selectedPriceRange = e.target.value;
     const [minPrice, maxPrice] = selectedPriceRange.split("-").map(Number);
     setPrice({ minPrice, maxPrice });
   }
+ 
   return (
     <div className="relative bg-purple-800 bg-opacity-75">
       <div className="md:h-20"></div> {/* Adjust the height as needed */}
@@ -34,7 +29,7 @@ const FilterProduct = ({ setCategory, setPrice }) => {
             value={active}
             onChange={handleCategoryChange}
           >
-            {categories.map((category) => (
+            {categories?.map((category) => (
               <option key={category} value={category}>
                 {category}
               </option>
