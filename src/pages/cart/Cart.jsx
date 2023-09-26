@@ -17,7 +17,7 @@ function CartPage() {
   }
 
   return (
-    <section className=' min-h-screen bg-slate-300'>
+    <section className='md:py-12 min-h-screen bg-slate-300'>
       <Toaster
         position="top-center"
         reverseOrder={false}
