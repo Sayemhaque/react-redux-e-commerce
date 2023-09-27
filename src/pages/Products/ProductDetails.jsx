@@ -13,16 +13,14 @@ const ProductDetails = () => {
       <div className="md:max-w-6xl mx-auto md:flex md:items-center bg-purple-500 bg-opacity-60 gap-5 pb-2 md:pb-0 
       rounded-b-3xl md:rounded-md overflow-hidden">
         <div >
-          <img className="h-[25rem] w-full md:h-96 md:w-auto"
+          <img className="h-[25rem] w-full md:h-96"
            src={product?.thumbnail} alt="" />
         </div>
-        <div className="space-y-6 py-8 md:py-4 px-3 text-white">
+        <div className="space-y-6 py-8 md:py-4 px-3  text-white">
           <h2 className="text-3xl text-white font-bold">{product?.title}</h2>
           <h4 className="text-md w-10/12 text-white">{product?.description}</h4>
           <div className="flex items-center gap-3">
-          <p className="text-sm text-gray-200"><s>${product?.price}</s></p>
-          <p className="text-md font-bold text-white">${product?.price * 
-          (product?.discountPercentage / 100).toFixed(2)}</p>
+          <p className="text-md font-bold text-white">${product?.price}</p>
           <ProductRating product={product}/>
           </div>
         <AddToCart product={product}/>
