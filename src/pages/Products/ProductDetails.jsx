@@ -13,7 +13,7 @@ const ProductDetails = () => {
       <div className="md:max-w-6xl mx-auto md:flex md:items-center bg-purple-500 bg-opacity-60 gap-5 pb-2 md:pb-0 
       rounded-b-3xl md:rounded-md overflow-hidden">
         <div >
-          <img className="h-[20rem] w-full md:h-auto md:w-auto"
+          <img className="h-[25rem] w-full md:h-96 md:w-auto"
            src={product?.thumbnail} alt="" />
         </div>
         <div className="space-y-6 py-8 md:py-4 px-3 text-white">

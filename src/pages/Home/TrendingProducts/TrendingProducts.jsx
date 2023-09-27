@@ -13,7 +13,8 @@ const TrendingProducts = () => {
     return (
         <section className="w-full bg-slate-300 min-h-screen">
             <SectionTitle title={"Trending Products"} />
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:max-w-6xl mx-auto px-3">
+            <div className="grid grid-cols-2 md:grid-cols-4
+             gap-3 md:gap-5 md:max-w-6xl mx-auto px-3 pb-5">
                 {products?.map(product =>
                     <ProductCard key={product.id} product={product} />
                 )}
