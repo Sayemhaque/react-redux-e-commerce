@@ -12,7 +12,7 @@ const cartSlice = createSlice({
     addToCart: (state, action) => {
       const data = action.payload;
       //increasing the the quantity of already in cart product
-      const alreadyInCart = state.cart.find((product) => product.id === data.id);
+      const alreadyInCart = state.cart.find((product) => product._id === data._id);
       if (alreadyInCart) {
         alreadyInCart.quantity += 1
       }
@@ -41,7 +41,7 @@ const cartSlice = createSlice({
     removeProductFromCart: (state, action) => {
       const productIdToRemove = action.payload;
       const removedProduct = state.cart.find(
-        (product) => product.id === productIdToRemove
+        (product) => product._id === productIdToRemove
       );
       // 
       if (removedProduct) {
@@ -51,7 +51,7 @@ const cartSlice = createSlice({
       }
       //showing toast message
 
-      state.cart = state.cart.filter((cart) => cart.id !== productIdToRemove);
+      state.cart = state.cart.filter((cart) => cart._id !== productIdToRemove);
       toast('removed form cart',
         {
           icon: '❌',
@@ -69,7 +69,7 @@ const cartSlice = createSlice({
       const productId = action.payload;
       //finding the product we want to increase quantity
       const productToUpdate = state.cart.find(
-        (product) => product.id === productId
+        (product) => product._id === productId
       );
       if (productToUpdate) {
         productToUpdate.quantity += 1;
@@ -88,7 +88,7 @@ const cartSlice = createSlice({
       const productId = action.payload;
       //finding the product we want to decrease quantity
       const productToUpdate = state.cart.find(
-        (product) => product.id === productId
+        (product) => product._id === productId
       );
       if (productToUpdate) {
         // Decrease the quantity
@@ -106,7 +106,7 @@ const cartSlice = createSlice({
       }
       // Remove the product from the cart if its quantity becomes zero
       if (productToUpdate.quantity === 0) {
-        state.cart = state.cart.filter((product) => product.id !== productId);
+        state.cart = state.cart.filter((product) => product._id !== productId);
         toast('removed form cart',
           {
             icon: '❌',

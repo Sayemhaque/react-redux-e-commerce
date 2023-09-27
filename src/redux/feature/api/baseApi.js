@@ -15,8 +15,14 @@ export const baseApi = createApi({
     }),
     getCategoryies: builder.query({
       query:() => "categories"
-    })
+    }),
+    getFeature:builder.query({
+     query:() => "products/feature"
+    }),
+    getTrending:builder.query({
+      query:() => "products/trending"
+     }),
   })
 })
 
-export const {useGetProductsByCategoryQuery,useGetAllProductsQuery,useGetSingleProductQuery,useGetCategoryiesQuery} = baseApi;
+export const {useGetProductsByCategoryQuery,useGetAllProductsQuery,useGetSingleProductQuery,useGetCategoryiesQuery,useGetFeatureQuery,useGetTrendingQuery} = baseApi;

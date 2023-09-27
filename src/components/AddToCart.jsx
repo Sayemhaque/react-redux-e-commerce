@@ -4,6 +4,7 @@ import { addToCart } from '../redux/feature/cartSlice';
 import Button from './Button';
 
 const AddToCart = ({product}) => {
+    console.log(product)
     const dispatch = useDispatch()
     return (
         <Button

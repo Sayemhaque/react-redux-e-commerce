@@ -1,17 +1,14 @@
-import { useEffect, useState } from "react";
 import FeatureProductCard from "./FeatureProductCard";
 import SectionTitle from "./SectionTitle";
 import { Toaster } from "react-hot-toast";
+import { useGetFeatureQuery } from "../redux/feature/api/baseApi";
+import Loading from "./Loading";
 
 const FeaturedProduct = () => {
-  const [products, setProducts] = useState([])
-
-  useEffect(() => {
-      fetch("featured.json")
-          .then(res => res.json())
-          .then(data => setProducts(data))
-  },)
-
+  const { data: products ,isLoading} = useGetFeatureQuery()
+  if(isLoading){
+    return <Loading/>
+}
   return (
     <section>
       <SectionTitle
