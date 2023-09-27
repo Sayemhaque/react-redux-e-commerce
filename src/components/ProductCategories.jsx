@@ -2,6 +2,7 @@ import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
 import { useGetCategoryiesQuery } from "../redux/feature/api/baseApi";
 import SectionTitle from "./SectionTitle";
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 
 const ProductCategories = () => {
   const { data: categories } = useGetCategoryiesQuery();
@@ -14,9 +15,11 @@ const ProductCategories = () => {
   };
 
   return (
-    <div className="bg-slate-300 text-white py-6">
+    <div className="bg-slate-300 text-white py-12">
       <div className="container mx-auto">
+        <div className="py-12">
         <SectionTitle title={"Product Categories"} />
+        </div>
         <div
           ref={containerRef}
           className="flex overflow-x-hidden gap-5 mt-1 md:mt-7 p-4 md:max-w-5xl mx-auto"
@@ -24,11 +27,13 @@ const ProductCategories = () => {
         >
           {categories?.map((category) => (
             <ul key={category.id}>
-              <li className="bg-purple-800 bg-opacity-80 p-4 rounded-md">
+             <Link to={`products/${category}`}>
+             <li className="bg-purple-800 bg-opacity-80 p-4 rounded-md">
                 <p className="font-medium text-md md:text-3xl w-full" style={{ whiteSpace: 'nowrap' }}>
                   {category}
                 </p>
               </li>
+             </Link>
             </ul>
           ))}
         </div>

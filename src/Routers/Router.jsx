@@ -8,6 +8,7 @@ import ProductDetails from "../pages/Products/ProductDetails";
 import Signin from "../pages/signIn/SignIn";
 import Signup from "../pages/SignUp/Signup";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import CategoryProducts from "../pages/CategoryProducs/CategoryProducts";
 
 export const router = createBrowserRouter([
     {
@@ -41,6 +42,10 @@ export const router = createBrowserRouter([
             {
                 path: "signup",
                 element: <Signup />
+            },
+            {
+                path: "products/:category",
+                element: <CategoryProducts />
             }
         ]
     },

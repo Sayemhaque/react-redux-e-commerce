@@ -11,9 +11,11 @@ const FeaturedProduct = () => {
   }
   return (
     <section>
-      <SectionTitle
+     <div className="py-12">
+     <SectionTitle
         title={"Featured Product"}
       />
+     </div>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5 md:max-w-6xl mx-auto px-3 pb-5">
         {products?.map(product =>
           <FeatureProductCard
