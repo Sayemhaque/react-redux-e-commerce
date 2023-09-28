@@ -20,7 +20,7 @@ const FilterProduct = ({ setCategory, setPrice }) => {
   return (
     <div className="relative bg-purple-800 bg-opacity-75">
       <div className="md:h-20"></div> {/* Adjust the height as needed */}
-      <div className="sticky top-20 flex flex-col gap-8 py-5 px-3 ">
+      <div className="sticky top-20 flex flex-col gap-8 py-5 px-3">
         <h4 className="text-2xl font-bold text-white text-center">Categories</h4>
         <aside className="flex md:flex-col gap-2  text-center md:gap-5">
           <select
