@@ -5,8 +5,8 @@ const SectionTitle = ({ title }) => {
     return (
         <h2 className="uppercase text-purple-500  text-center 
         text-2xl md:text-5xl
-         font-sans font-bold  py-5
-         rounded-md bg-gray-100 w-7/12 mx-auto" style={{ whiteSpace: 'nowrap' }}>
+         font-sans font-bold  py-5 px-3
+         rounded-md bg-gray-100 w-9/12 md:w-7/12 mx-auto" style={{ whiteSpace: 'nowrap' }}>
              <Typewriter
                 words={[title]}
                 loop={false}
