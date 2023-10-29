@@ -1,12 +1,10 @@
 import { useSelector } from 'react-redux';
-
-
-
 import { Toaster } from 'react-hot-toast';
 
 import CartCard from './CartCard';
 function CartPage() {
   const { cart,totalPrice } = useSelector((state) => state.cartSlice)
+  console.log(cart)
 
 
   let totalQuantity = 0;

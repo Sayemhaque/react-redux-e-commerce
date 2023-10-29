@@ -4,7 +4,7 @@ import cartSlice from "./feature/cartSlice";
 import favProductSlice from "./feature/favProductSlice";
 import { setupListeners } from "@reduxjs/toolkit/dist/query";
 import { baseApi } from "./feature/api/baseApi";
-
+      
 const store = configureStore({
     reducer:
     {

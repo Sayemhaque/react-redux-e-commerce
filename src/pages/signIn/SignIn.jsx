@@ -1,11 +1,11 @@
-import { SignIn } from '@clerk/clerk-react';
+import SignIn from '../../components/SignIn';
 import Button from '../../components/Button';
 import { Link } from 'react-router-dom';
 
 const Signin = () => {
     return (
         <div className='flex justify-center flex-col items-center h-[90vh] bg-gray-200'>
-            <SignIn />
+            <SignIn/>
             <Link to="/">
                 <Button
                     title={"Home"}

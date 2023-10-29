@@ -1,41 +1,38 @@
 import { createSlice } from "@reduxjs/toolkit";
 import toast from "react-hot-toast";
 
+const products = localStorage.getItem("cart") !== null ? 
+                 JSON.parse(localStorage.getItem("cart")) : []
+                 console.log(products)
+const totalAmount = localStorage.getItem("totalAmout") !== null ? 
+                    JSON.parse(localStorage.getItem("totalAmount")) : 0;
+const totalQuantity = localStorage.getItem("totalQuantity") !== null ?
+                      JSON.parse(localStorage.getItem("totalQuantity")) : 0 
 const cartSlice = createSlice({
   name: "cartSlice",
   initialState: {
-    cart: [],
-    totalPrice: 0,
+    cart: products,
+    totalAmount:totalAmount,
+    totalQuantity:totalQuantity
   },
   reducers: {
     // addding product to the cart
     addToCart: (state, action) => {
       const data = action.payload;
-      //increasing the the quantity of already in cart product
-      const alreadyInCart = state.cart.find((product) => product._id === data._id);
-      if (alreadyInCart) {
-        alreadyInCart.quantity += 1
+      console.log(data)
+      const alredyInCart = state.cart.find(product => product.id === data.id)
+      console.log(alredyInCart)
+      if(!alredyInCart){
+        state.cart.push({...data,quantity:1,totalPrice:data.price})
+      }else{
+        alredyInCart.quantity++
+        alredyInCart.totalPrice = alredyInCart.quantity * alredyInCart.price
       }
-      else {
-        // adding quantity to the product object
-        state.cart.push({ ...data, quantity: 1 });
-      }
-      //showing toast message
-      toast('Added to cart',
-        {
-          icon: '🛒',
-          style: {
-            borderRadius: '10px',
-            background: '#6B1D9A',
-            color: '#fff',
-          },
-        });
-      // updating the total price of all the products in cart
-      const totalPrice = state.cart.reduce(
-        (accumulator, product) => accumulator + parseFloat(product.price) * parseFloat(product.quantity),
-        0
-      );
-      state.totalPrice = totalPrice.toFixed(2);
+        localStorage.setItem("cart",JSON.stringify(state.cart.map(product => product)))
+      
+       
+      //set cart items
+ 
     },
     // remove a single product form the cart
     removeProductFromCart: (state, action) => {
