@@ -17,12 +17,26 @@ export const baseApi = createApi({
       query:() => "categories"
     }),
     getFeature:builder.query({
-     query:() => "products/feature"
+     query:() => "products/featured"
     }),
     getTrending:builder.query({
       query:() => "products/trending"
      }),
+     signup:builder.mutation({
+      query: (userdata) => ({
+        url:"/register",
+        method:"POST",
+        body:userdata
+      })
+     }),
+     signin:builder.mutation({
+      query: (userdata) => ({
+        url:"/login",
+        method:"POST",
+        body:userdata
+      })
+     })
   })
 })
 
-export const {useGetProductsByCategoryQuery,useGetAllProductsQuery,useGetSingleProductQuery,useGetCategoryiesQuery,useGetFeatureQuery,useGetTrendingQuery} = baseApi;
+export const {useGetProductsByCategoryQuery,useGetAllProductsQuery,useGetSingleProductQuery,useGetCategoryiesQuery,useGetFeatureQuery,useGetTrendingQuery,useSignupMutation,useSigninMutation} = baseApi;
