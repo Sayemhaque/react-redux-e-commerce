@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Signin = () => {
     return (
-        <div className='flex justify-center flex-col items-center h-[90vh] bg-gray-200'>
+        <div className='flex justify-center flex-col items-center  h-[90vh] bg-gray-200'>
             <SignIn/>
             <Link to="/">
                 <Button

@@ -24,8 +24,8 @@ const SignIn = () => {
     }
   }
   return (
-    <div className="flex items-center justify-center bg-gray-100 ">
-      <div className="bg-white p-8 rounded-lg overflow-hidden shadow-md w-[500px]">
+    <div>
+      <div className="bg-white p-12 rounded-lg overflow-hidden shadow-md w-full md:w-[500px]">
         <h2 className="text-2xl font-bold text-center  text-gray-800 mb-6">Log in</h2>
         <form onSubmit={handleSignIn}>
           <div className="mb-4">
@@ -35,8 +35,6 @@ const SignIn = () => {
               text="Email"
             />
             <Input
-              styles="border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:ring focus:border-blue-300"
-              type="email"
               name="email"
               placeholder="example@gmail.com"
             />
@@ -48,7 +46,6 @@ const SignIn = () => {
               text="Password"
             />
             <Input
-              styles="border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:ring focus:border-blue-300"
               type="password"
               name="password"
               placeholder="*********"
