@@ -29,17 +29,12 @@ const authSlice = createSlice({
         clearError:(state) => {
            state.error = null
         },
-        login:(state,action) => {
-            state.user = action.payload;
-            state.isAuthenticated = !!action.payload;
-            state.isLoading = false;
-            state.error = null
-        },
         logOut:(state)=> {
             state.user = null,
             state.isAuthenticated = false;
             state.isLoading = false;
             state.error = null
+            localStorage.removeItem("user")
         }
     }
 })

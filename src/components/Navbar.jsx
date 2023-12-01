@@ -1,11 +1,12 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import useToggle from '../hooks/useToggle';
 import { FaShoppingBag } from "react-icons/fa"
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import NavBarToogleIcons from './NavBarToogleIcons';
 import CartIcon from './CartIcon';
 import FavouriteIcon from './FavouriteIcon';
 import Button from './Button';
+import { logOut } from '../redux/feature/api/authSlice';
 
 
 const navLinks = [
@@ -17,13 +18,21 @@ const navLinks = [
 ];
 
 function Navbar() {
-    const { isAuthenticated } = useSelector(state => state.authSlice)
+    const { isAuthenticated} = useSelector(state => state.authSlice)
     const [isToggled, toogle] = useToggle(false)
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
     const { cart } = useSelector((state) => state.cartSlice)
     let totalQuantity = 0;
     // Loop through the cart and sum up the quantities
     for (const item of cart) {
         totalQuantity += item.quantity;
+    }
+
+    //logout fn
+    const handleLogOut = () => {
+        dispatch(logOut())
+        navigate("/signin")
     }
 
     return (
@@ -53,6 +62,7 @@ function Navbar() {
                         <Button
                             title={"Log Out"}
                             style={"bg-purple-900 px-5 py-1 rounded-lg"}
+                            onClick={handleLogOut}
                         />
                     }
                     {!isAuthenticated ? <Link to="signin" className="md:hidden text-white font-semibold">
