@@ -1,14 +1,17 @@
-import { useState } from 'react';
-import { useSignupMutation } from '../redux/feature/api/baseApi';
+
 import Button from './Button';
 import { Link, useNavigate } from 'react-router-dom';
 import Label from './Label';
 import Input from './Input';
+import { useDispatch, useSelector } from 'react-redux';
+import { setError, setLoading} from '../redux/feature/api/authSlice';
+import axios from 'axios';
 
 const SignUp = () => {
+    // const navigate = useNavigate()
+    const { error, isLoading } = useSelector((state) => state.authSlice)
+    const dispatch = useDispatch()
     const navigate = useNavigate()
-    const [errors, setErrors] = useState("")
-    const [signup, { isLoading }] = useSignupMutation()
     const handleSignUp = async (e) => {
         try {
             e.preventDefault()
@@ -17,13 +20,15 @@ const SignUp = () => {
             const email = form.email.value;
             const password = form.password.value;
             const userdata = { username, email, password }
-            const payload = await signup(userdata).unwrap()
-            if (payload.status) {
+            dispatch(setLoading(true))
+            const response = await axios.post("https://shopzenith.vercel.app/api/register", userdata)
+            console.log(response)
+            if(response.data.status){
                 navigate("/signin")
             }
         } catch (error) {
-            console.log(error)
-            setErrors(error.data.error)
+            console.log()
+            dispatch(setError(error.response.data.error))
         }
     }
     return (
@@ -66,7 +71,7 @@ const SignUp = () => {
                             placeholder="*********"
                         />
                     </div>
-                    <p className="text-red-500">{errors}</p>
+                    <p className="text-red-500">{error}</p>
                     <Button
                         title={isLoading ? "Loading..." : "Sign up"}
                         style={'bg-purple-700 w-full py-3 rounded-lg'}

@@ -22,20 +22,6 @@ export const baseApi = createApi({
     getTrending:builder.query({
       query:() => "products/trending"
      }),
-     signup:builder.mutation({
-      query: (userdata) => ({
-        url:"/register",
-        method:"POST",
-        body:userdata
-      })
-     }),
-     signin:builder.mutation({
-      query: (userdata) => ({
-        url:"/login",
-        method:"POST",
-        body:userdata
-      })
-     })
   })
 })
 

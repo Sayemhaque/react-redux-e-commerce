@@ -1,15 +1,17 @@
 import { Link, useNavigate } from "react-router-dom";
 import Button from "./Button";
-import { useSigninMutation } from "../redux/feature/api/baseApi";
 import { useState } from "react";
 import Input from "./Input";
 import Label from "./Label";
+import { useDispatch, useSelector } from "react-redux";
+import axios from "axios";
+import { setError, setUser } from "../redux/feature/api/authSlice";
 
 
 const SignIn = () => {
   const navigate = useNavigate()
-  const [errors, setErrors] = useState("")
-  const [signin, { isLoading }] = useSigninMutation()
+  const dispatch = useDispatch()
+  const {error,isLoading} = useSelector((state) => state.authSlice)
   const handleSignIn = async (e) => {
     try {
       e.preventDefault()
@@ -17,10 +19,12 @@ const SignIn = () => {
       const email = form.email.value;
       const password = form.password.value;
       const userdata = { email, password }
-      await signin(userdata).unwrap()
+      const response = await axios.post("https://shopzenith.vercel.app/api/login",userdata)
+      console.log(response)
+      dispatch(setUser(response.data.token))
       navigate("/")
     } catch (error) {
-      setErrors(error.data.error)
+      dispatch(setError(error.response.data.error))
     }
   }
   return (
@@ -51,7 +55,7 @@ const SignIn = () => {
               placeholder="*********"
             />
           </div>
-          <p className="text-red-500">{errors}</p>
+          <p className="text-red-500">{error}</p>
           <Button
             title={isLoading ? "Loading..." : "Log in"}
             style={'bg-purple-700 w-full py-3 rounded-lg'}

@@ -2,6 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 // import logger from "redux-logger";
 import cartSlice from "./feature/cartSlice";
 import favProductSlice from "./feature/favProductSlice";
+import authSlice from "./feature/api/authSlice";
 import { setupListeners } from "@reduxjs/toolkit/dist/query";
 import { baseApi } from "./feature/api/baseApi";
       
@@ -10,6 +11,7 @@ const store = configureStore({
     {
         cartSlice,
         favProductSlice,
+        authSlice,
         [baseApi.reducerPath] : baseApi.reducer,
     },
   

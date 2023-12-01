@@ -6,20 +6,19 @@ import { RouterProvider } from 'react-router-dom'
 import { router } from './Routers/Router.jsx'
 import { Provider } from 'react-redux'
 import store from './redux/store'
-import { ClerkProvider } from "@clerk/clerk-react";
+import { setUser } from './redux/feature/api/authSlice.js'
 
-if (!import.meta.env.VITE_REACT_APP_CLERK_PUBLISHABLE_KEY) {
-  throw new Error("Missing Publishable Key")
+
+const user = JSON.parse(localStorage.getItem("user"))
+
+if(user){
+  store.dispatch(setUser(user))
 }
-const clerkPubKey = import.meta.env.VITE_REACT_APP_CLERK_PUBLISHABLE_KEY;
-
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <ClerkProvider publishableKey={clerkPubKey}>
-      <Provider store={store}>
-        <RouterProvider router={router} />
-      </Provider>
-    </ClerkProvider>
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>,
 )
